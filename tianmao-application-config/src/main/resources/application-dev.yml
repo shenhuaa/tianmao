@@ -25,7 +25,7 @@ web:
 
 #server服务
 server:
-  app: #app服务配置
+  app:
     port: 9002
     name: tianmao-server-app
     logging: server-app

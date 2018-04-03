@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 import tianmao.dto.user.MessageContentDto;
 import tianmao.mapper.MessageTemplateMapper;
 import tianmao.model.user.MessageTemplate;
+import tianmao.model.user.UserMessage;
 import tianmao.service.MessageTemplateService;
+import tianmao.service.UserMessageService;
 import tianmao.type.user.MessageTemplateType;
-
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Date;

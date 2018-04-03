@@ -27,7 +27,7 @@ public class LoginComponent {
      * 4.抛异常
      * 5.拦截器
      * 6.微信授权登录
-     *
+     * 7.上传视频
      */
 
     @Autowired

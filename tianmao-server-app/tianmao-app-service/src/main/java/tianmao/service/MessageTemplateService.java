@@ -10,7 +10,7 @@ import tianmao.dto.user.MessageContentDto;
  * @author roach
  * @date 2018/1/6
  */
-@FeignClient(name = "${server.post.name}")
+@FeignClient(name = "${server.app.name}")
 public interface MessageTemplateService {
 
     @RequestMapping(value = "/message-template-type/content")
