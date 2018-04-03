@@ -1,0 +1,6 @@
+subprojects {
+    dependencies {
+        compile project(':tianmao-common')
+        compile project(':tianmao-common-model')
+    }
+}

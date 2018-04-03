@@ -1,0 +1,131 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.8.RELEASE'
+	}
+	repositories {
+		mavenLocal()
+		/* mavenCentral()*/
+		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+/*
+所有子项目
+* */
+subprojects {
+
+	apply plugin: 'java'
+	apply plugin: 'idea'
+	apply plugin: 'org.springframework.boot'
+
+	group = 'cn.alphaidea.tianmao'
+	//version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = 1.8
+
+	//liunx下执行jar
+	springBoot {
+		executable = true
+	}
+
+	//打war包时使用
+	/* configurations {
+         providedRuntime
+     }*/
+
+	ext {
+		springCloudVersion = 'Dalston.SR4'
+		springBootMyBatisVersion = '1.2.0'
+		springBootAdminVersion = '1.5.0'
+		shiroSpringVersion = '1.4.0'
+		redissonVersion = "3.4.0"
+		lettuceVersion = "4.3.2.Final"
+		druidVersion = "1.1.2"
+		httpclientVersion = "4.3.5"
+		commonslangVersion = "2.6"
+		commonslang3Version = "3.3.2"
+		commonsioVersion = "1.3.2"
+		commonsnetVersion = "3.3"
+		slf4jVersion = "1.7.25"
+		quartzVersion = "2.3.0"
+		fastjsonVersion = "1.2.30"
+		persistenceVersion = "1.0.2"
+		pagehelperBootVersion = "1.2.3"
+		pagehelperVersion = "5.1.2"
+		mybatisMapperVersion = "1.1.5"
+		zxingVersion = "3.3.1"
+		commonsIoVersion = "2.6"
+		feignOkhttVersion = "8.18.0"
+		jpushClientVersion = "3.3.3"
+		xstreamVersion = "1.4.9"
+		wxpaySdkVersion = "0.0.3"
+		poiVersion = "3.17"
+		activemqCodeVersion = "5.7.0"
+		springMobileVersion = "1.1.5.RELEASE"
+		userAgentUtilsVersion = "1.21"
+		thumbnailatorVersion = "0.4.8"
+		swagger2Version = "2.8.0"
+	}
+
+	repositories {
+		mavenLocal()
+		/*  mavenCentral()*/
+		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+	}
+
+	// 打包后需要排除的文件
+	List<String> needExcludeFiles = ["rebel.xml"]
+	jar {
+		manifest {
+			attributes("Implementation-Title": project.name,
+					"Implementation-Vendor": project.group,
+					"Created-By": project.group,
+					"Implementation-Date": new Date(),
+					"Implementation-Version": project.version)
+		}
+		exclude needExcludeFiles
+	}
+
+	//修改war包名称
+	/*if (project.name.contains("-web-") || project.name.contains("-cloud")) {
+        apply plugin: 'war'
+        //apply plugin: 'org.hidetake.ssh'
+        //apply from: "${project.rootDir}/reploy-online.gradle"
+        def warName = project.name.substring(project.name.lastIndexOf('-') + 1, project.name.length())
+        war { archiveName = warName + '.war' }
+        war.rootSpec.exclude needExcludeFiles
+        switch (environment) { // robots.txt files handler
+            case "test":
+                war.rootSpec.rename("robots-${environment}.txt", 'robots.txt')
+                war.rootSpec.exclude 'robots-prod.txt'
+                break
+            case "prod":
+                war.rootSpec.rename("robots-${environment}.txt", 'robots.txt')
+                war.rootSpec.exclude 'robots-test.txt'
+                break;
+            default:
+                war.rootSpec.exclude 'robots-*.txt'
+        }
+    } else if (project.name.contains("-service")) {
+        apply plugin: 'war'
+        def warName = project.name.substring(project.name.indexOf('-') + 1, project.name.length())
+        war { archiveName = warName + '.war' }
+        war.rootSpec.exclude needExcludeFiles
+    }*/
+
+	dependencies {
+		compileOnly('org.projectlombok:lombok')
+		compileOnly("javax.servlet:javax.servlet-api")
+		testCompile("org.springframework.boot:spring-boot-starter-test")
+		/*providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')*/
+		//runtime("org.springframework.boot:spring-boot-devtools")
+	}
+
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		}
+	}
+}

@@ -1,0 +1,23 @@
+#应用名称
+spring:
+  application:
+    name: ${cloud.eureka.name}
+
+#tomcat端口号
+server:
+  port: ${cloud.eureka.port}
+
+#日志保存路径
+logging:
+  path: ${cloud.eureka.logging}
+
+#eureka配置
+eureka:
+  instance:
+    hostname: ${hostname:eureka}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: ${cloud.eureka.url}
+      instance-id: ${spring.application.remark}:${spring.cloud.client.ipAddress}:${server.port}

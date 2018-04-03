@@ -1,0 +1,4 @@
+dependencies {
+    compile project(':tianmao-common')
+    compile "org.springframework.boot:spring-boot"
+}

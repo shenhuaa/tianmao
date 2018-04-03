@@ -1,0 +1,40 @@
+#应用环境
+spring:
+  profiles:
+    active: dev
+
+ #文件上传大小
+  http:
+    multipart:
+      max-file-size: 100Mb
+      max-request-size: 100Mb
+
+#web 404页面（server使用默认的）
+web:
+  error.path: /404
+
+#开启优雅下线
+endpoints:
+  shutdown:
+    enabled: true
+
+#关闭安全认证
+security:
+  basic:
+    enabled: false
+
+feign:
+  okhttp:
+    enabled: false
+
+management:
+  security:
+    enabled: false
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000

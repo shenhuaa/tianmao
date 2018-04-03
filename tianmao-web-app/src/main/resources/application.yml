@@ -1,0 +1,31 @@
+#tomcat端口号
+server:
+  port: ${web.app.port}
+
+#应用名称
+spring:
+  application:
+    name: ${web.app.name}
+
+  #mvc:
+    #出现错误时, 直接抛出异常
+    #throwExceptionIfNoHandlerFound: true
+
+  #freemarker:
+    #expose-request-attributes: true
+    #allow-request-override: true
+    #expose-session-attributes: true
+    #allow-session-override: true
+
+#日志保存路径
+logging:
+  path: ${web.app.logging}
+
+#eureka客户端配置
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: ${cloud.eureka.cluster}

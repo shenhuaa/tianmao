@@ -1,0 +1,28 @@
+#tomcat端口号
+server:
+  port: ${server.app.port}
+
+#应用名称
+spring:
+  application:
+    name: ${server.app.name}
+
+  #jackson配置
+  jackson:
+    serialization.write_dates_as_timestamps: false
+    time-zone: GMT+8
+
+#日志保存路径
+logging:
+  path: ${server.app.logging}
+
+#eureka客户端配置
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: ${cloud.eureka.cluster}
+
+

@@ -1,0 +1,89 @@
+#导入配置文件
+spring:
+  profiles:
+    include: dev-data,dev-party-account
+
+#web app端口路径配置
+web:
+  #网站网址ip或域名
+  domain: http://127.0.0.1
+  proxy-domain: http://huangliuhai.wicp.net
+
+  app:
+    port: 8090
+    name: tianmao-web-app
+    logging: web-app
+    url: ${web.domain}:${web.app.port}
+
+
+  image:
+    url: ${web.domain}
+    #url: http://tianmao-oss-prod.oss-cn-hongkong.aliyuncs.com
+    imgsize: ?x-oss-process=image/resize,w_600
+  #ffmpeg路径
+  ffmpeg: ${storage.prefix}/ffmpeg/bin/ffmpeg.exe
+
+#server服务
+server:
+  app: #app服务配置
+    port: 9002
+    name: tianmao-server-app
+    logging: server-app
+#cloud配置
+cloud:
+  eureka: #eureka配置
+     port: 9000
+     name: tianmao-cloud-eureka
+     logging: cloud-eureka
+     url: ${web.domain}:${cloud.eureka.port}/eureka
+     cluster: ${web.domain}:${cloud.eureka.port}/eureka
+  admin:
+    port: 9001
+    name: tianmao-cloud-admin
+    logging: cloud-admin
+
+
+#文件存储路径
+storage:
+  #存储前缀
+  prefix: E:/tianmao/storage
+  default: /upload/default.png
+  path:
+    #水印图
+    watermark: ${storage.prefix}/upload/watermark.png
+    #视频水印图
+    play.watermark: ${storage.prefix}/upload/play_watermark.png
+    #帖子
+    app: /upload/image/app
+    #微说上传图片
+    talk.img: /upload/image/talk
+    #微说上传视频
+    talk.video: /upload/video/talk
+    #兴趣圈图片
+    circle: /upload/image/circle
+    #广告图
+    advert: /upload/image/advert
+    #用户头像
+    head: /upload/image/head
+    #红包
+    red: /upload/image/red
+    #门店图片
+    shop: /upload/image/shop
+    #商品图片
+    good: /upload/image/good
+    #商城商品图片
+    mall.good: /upload/image/mall/good
+    #消息图片
+    message: /upload/image/message
+    #出门二维码
+    out.door.qrcode: ${storage.prefix}/upload/qrcode
+    #售货机二维码
+    vendor.qrcode: ${storage.prefix}/upload/qrcode/vendor
+
+#日志文件
+logging:
+  #日志保存路径
+  dir: /web/logs/${logging.path}
+  config: classpath:logback-spring.xml
+  level:
+    root: info

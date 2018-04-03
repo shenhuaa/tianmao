@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+tianmao.mybatis.config.DruidAutoConfiguration,\
+tianmao.mybatis.config.DruidMonitorAutoConfiguration

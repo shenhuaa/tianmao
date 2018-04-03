@@ -1,0 +1,43 @@
+spring:
+  #redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+
+
+#mysql配置
+druid:
+  username: root
+  #root
+  password: bNVOqb7WKLX5Bjnw+LMv92taj25KOxDimXxILPQjw42wgv+1lHzOH8kr97xDwWdhpY67QuYCS7sWN4W46YbkFA==
+  url: jdbc:mysql://127.0.0.1:3306/istore?cuseUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true
+  #123456
+  #password: Biyu5YzU+6sxDRbmWEa3B2uUcImzDo0BuXjTlL505+/pTb+/0Oqd3ou1R6J8+9Fy3CYrM18nBDqf6wAaPgUGOg==
+  #url: jdbc:mysql://192.168.0.103:3306/tianmao?cuseUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true
+  initial-size: 1
+  min-idle: 1
+  max-active: 20
+  test-on-borrow: true
+  max-wait: 60000
+  time-between-eviction-runs-millis: 60000
+  min-evictable-idle-time-millis: 300000
+  validation-query: SELECT 1 FROM DUAL
+  test-While-Idle: true
+  test-on-return: false
+  pool-prepared-statements: false
+  max-pool-prepared-statement-per-connection-size: 20
+  filters: stat,wall,log4j,config
+  connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;config.decrypt=true
+  monitor:
+    enabled: false
+    druid-stat-view: /druid/*
+    druid-web-stat-filter: /*
+    allow: 219.230.50.107,127.0.0.1
+    deny: 192.168.1.73
+    login-username: admin
+    login-password: 123456
+    exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+    reset-enable: false
+

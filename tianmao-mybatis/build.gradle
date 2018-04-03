@@ -1,0 +1,12 @@
+dependencies {
+    runtime('mysql:mysql-connector-java')
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+    /*compile("org.springframework.boot:spring-boot-starter-jta-atomikos")*/
+    compile("org.springframework.boot:spring-boot-starter-aop")
+    compile("tk.mybatis:mapper-spring-boot-starter:${mybatisMapperVersion}")
+    compile("com.github.pagehelper:pagehelper-spring-boot-starter:${pagehelperBootVersion}")
+    compile("com.alibaba:druid:${druidVersion}")
+    compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
+
+
+}

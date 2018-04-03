@@ -1,0 +1,22 @@
+jar {
+    baseName = 'web-app'
+}
+dependencies {
+    compile project(':tianmao-redis')
+    compile project(':tianmao-application-config')
+    compile project(':tianmao-server-app:tianmao-app-service')
+    compile("com.netflix.feign:feign-okhttp:${feignOkhttVersion}")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.cloud:spring-cloud-starter-eureka")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("io.springfox:springfox-swagger-ui:${swagger2Version}")
+    compile("cn.jpush.api:jpush-client:${jpushClientVersion}")
+    compile("io.springfox:springfox-swagger2:${swagger2Version}")
+    compile("com.google.zxing:core:${zxingVersion}")
+    compile("org.springframework.boot:spring-boot-starter-freemarker")
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'org.apache.poi', name: 'poi', version: '3.10-FINAL'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.0'
+    compile group: 'org.json', name: 'json', version: '20171018'
+}

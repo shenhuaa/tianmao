@@ -1,0 +1,12 @@
+dependencies {
+    compile("org.springframework:spring-web")
+    compile("org.apache.shiro:shiro-spring:${shiroSpringVersion}")
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
+    compile("org.apache.commons:commons-lang3:${commonslang3Version}")
+    compile("commons-lang:commons-lang:${commonslangVersion}")
+    compile("com.alibaba:fastjson:${fastjsonVersion}")
+    compile("org.slf4j:slf4j-api:${slf4jVersion}")
+    compile("com.fasterxml.jackson.core:jackson-annotations")
+    compile ("javax.persistence:persistence-api:${persistenceVersion}")
+    compile ("com.github.pagehelper:pagehelper:${pagehelperVersion}")
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--文档地址：https://logback.qos.ch/manual/layouts.html-->
+<!-- 从高到地低 OFF 、 FATAL 、 ERROR 、 WARN 、 INFO 、 DEBUG 、 TRACE 、 ALL -->
+<!-- 日志输出规则  根据当前ROOT 级别，日志输出时，级别高于root默认的级别时  会输出 -->
+<!-- 以下每个dtolter 是过滤掉输出文件里面，会出现高级别文件，依然出现低级别的日志信息，通过filter 过滤只记录本级别的日志-->
+<!-- 属性描述 scan：性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
+    debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
+<configuration scan="true">
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml" />-->
+    <!--保存路径-->
+    <springProperty scope="context" name="DIR" source="logging.dir"/>
+
+    <timestamp key="DATA_FORMAT" datePattern="yyyyMM'/'dd"/>
+
+    <!-- 定义日志文件保存位置 -->
+    <property name="LOG_FILE" value="${DIR}/${DATA_FORMAT}.log"/>
+
+    <!--日志输出格式-->
+    <property name="FILE_LOG_PATTERN" value="[%highlight(%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level)] [%thread] %cyan(%logger) %L %M - %msg%n"/>
+
+    <!--单个文件最大值-->
+    <property name="MAX_FILE_SIZE" value="10MB"/>
+
+    <!-- ConsoleAppender 控制台输出日志 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+
+        <file>${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%i</fileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>${MAX_FILE_SIZE}</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <!--启动优化-->
+    <logger name="org.springframework.jmx.export.annotation.AnnotationMBeanExporter" level="WARN"/>
+    <logger name="com.netflix.config.sources.URLConfigurationSource" level="WARN"/>
+    <logger name="com.netflix.discovery.provider.DiscoveryJerseyProvider" level="WARN"/>
+    <logger name="com.netflix.discovery.DiscoveryClient" level="WARN"/>
+    <logger name="org.springframework.context.support.PostProcessorRegistrationDelegate" level="WARN"/>
+    <logger name="org.springframework.tianmao.servlet.mvc.method.annotation.RequestMappingHandlerMapping" level="WARN"/>
+    <logger name="org.springframework.tianmao.servlet.handler.SimpleUrlHandlerMapping" level="WARN"/>
+    <logger name="org.springframework.boot.tianmao.servlet.FilterRegistrationBean" level="WARN"/>
+    <logger name="com.netflix.loadbalancer.PollingServerListUpdater" level="ERROR"/>
+    <logger name="org.springframework.tianmao.servlet.mvc.method.annotation.RequestMappingHandlerMapping" level="DEBUG"/>
+    <logger name="org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping" level="WARN"/>
+    <logger name="org.springframework.boot.actuate.endpoint.jmx.EndpointMBeanExporter" level="WARN"/>
+    <logger name="tianmao" level="DEBUG"/>
+
+    <root level="INFO">
+        <!-- 控制台输出 -->
+        <appender-ref ref="console"/>
+        <appender-ref ref="rollingFile"/>
+    </root>
+
+</configuration>
