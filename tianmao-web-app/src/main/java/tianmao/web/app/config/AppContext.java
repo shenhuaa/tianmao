@@ -17,6 +17,11 @@ import javax.servlet.ServletContext;
 @Configuration
 public class AppContext implements ServletContextAware {
 
+
+    /**
+     * 管理后台根网址
+     */
+    public static String adminUrl;
     /**
      * 上传图片路径
      */
@@ -84,6 +89,14 @@ public class AppContext implements ServletContextAware {
      */
     public static String playWatermarkPath;
 
+    @Value("${web.admin.url}")
+    public void setAdminUrl(String adminUrl) {
+        AppContext.adminUrl = adminUrl;
+    }
+
+    public String getAdminUrl() {
+        return AppContext.adminUrl;
+    }
 
 
     /**

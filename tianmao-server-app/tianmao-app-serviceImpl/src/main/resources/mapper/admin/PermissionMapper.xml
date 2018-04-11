@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="tianmao.admin.mapper.PermissionMapper">
+
+    <resultMap id="default" type="tianmao.model.user.Permission"/>
+
+    <resultMap id="containParent" type="tianmao.model.user.Permission" autoMapping="true">
+        <id property="id" column="id"/>
+        <association property="parent" column="id" javaType="tianmao.model.user.Permission">
+            <id property="id" column="parent_id"/>
+            <result property="name" column="parent_name"/>
+        </association>
+    </resultMap>
+
+    <insert id="create" parameterType="tianmao.model.user.Permission" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO admin_permission (`parent_id`, `name`, `mark`, `link`, `icon`, `sort`)
+        VALUES (#{parent.id}, #{name}, #{mark}, #{link}, #{icon}, #{sort});
+    </insert>
+
+    <update id="update" parameterType="tianmao.model.user.Permission">
+        UPDATE admin_permission
+        <set>
+            `name`      = #{name},
+            link        = #{link},
+            mark        = #{mark},
+            icon        = #{icon},
+            sort        = #{sort},
+            parent_id   = #{parent.id}
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <select id="getChildrenList" resultMap="containParent">
+        SELECT * FROM admin_permission
+        WHERE parent_id = #{parentId}
+        ORDER BY sort ASC
+    </select>
+
+    <select id="getPermissionById" resultMap="containParent" parameterType="long">
+        SELECT
+            p.*,
+            ap.`name` parent_name
+        FROM admin_permission p
+        LEFT JOIN admin_permission ap ON ap.id = p.parent_id
+        WHERE p.id = #{id}
+        ORDER BY p.mark DESC;
+    </select>
+
+    <select id="getPermissionsByIds" resultMap="default">
+        SELECT * FROM admin_permission
+        WHERE id IN
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="getAllPermissions" resultMap="default">
+        SELECT * FROM admin_permission
+        WHERE mark &lt;&gt; ''
+    </select>
+
+    <select id="getPermissionIds" resultType="long">
+        SELECT permission_id FROM admin_role_permission
+        WHERE role_id = #{roleId}
+    </select>
+
+    <select id="checkPermission" resultType="java.lang.Boolean">
+        SELECT COUNT(*)
+        FROM admin_permission up
+        JOIN admin_role_permission rp ON rp.permission_id = up.id
+        JOIN admin_role ur ON ur.role_id = rp.role_id
+        WHERE ur.user_id = #{adminId}
+          AND up.mark = #{permission}
+    </select>
+
+    <select id="getListByMenuId" resultType="long">
+        SELECT ap.id FROM admin_permission ap
+        JOIN admin_menu_permission amp ON amp.permission_id = ap.id
+        WHERE amp.menu_id = #{menuId}
+    </select>
+
+    <select id="getListByParentId" resultMap="default">
+        SELECT
+        ap.*,
+        apn.name parent_name
+        FROM admin_permission ap
+        LEFT JOIN admin_permission apn ON apn.id = ap.parent_id
+        WHERE ap.parent_id = #{parentId}
+        ORDER BY ap.sort ASC;
+    </select>
+
+    <select id="getListByUserIdAndParentId" resultMap="default">
+        SELECT DISTINCT
+          ap.*
+        FROM admin_permission ap
+        LEFT JOIN admin_role_permission arp ON arp.permission_id = ap.id
+        LEFT JOIN admin_role ar ON ar.id = arp.role_id
+        LEFT JOIN admin_with_role awr ON awr.role_id = ar.id
+        WHERE ap.parent_id = #{parentId}
+        <if test="uid != null">
+            AND awr.admin_id = #{uid}
+        </if>
+        ORDER BY ap.sort ASC;
+    </select>
+
+</mapper>

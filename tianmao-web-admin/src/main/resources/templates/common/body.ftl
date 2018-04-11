@@ -1,0 +1,10 @@
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/content.js"></script>
+<script type="text/javascript" src="/static/js/modal.js"></script>
+<script type="text/javascript" src="/static/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="/static/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script type="text/javascript" src="/static/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="/static/plugins/switchery/switchery.js"></script>
+<script type="text/javascript" src="/static/plugins/sweetalert/sweetalert.min.js"></script>
+<script type="text/javascript" src="/static/js/main.js"></script>

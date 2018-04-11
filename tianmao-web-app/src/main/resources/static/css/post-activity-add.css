@@ -1,0 +1,276 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+	/*background-color: #e7e8ec;*/
+}
+/*个人中心*/
+.box header{
+	height: 54px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background-color: cornflowerblue;
+}
+.box header a{
+	text-decoration: none;
+	color: white;
+	position: absolute;
+	left: 20px;
+	font-size: 20px;
+}
+.main{
+	padding: 0 20px 8px 20px;
+	box-sizing: border-box;
+}
+.renshu,.lin{
+	border: none;
+	outline: none;
+}
+.main .category{
+	border-bottom: 1px solid gainsboro;
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	align-items: center;
+	font-size: 14px;
+}
+.main .xz{
+	display: flex;
+	align-items: center;
+	color: gray;
+}
+.main .xz img{
+	width: 19px;
+}
+.heid,.show{
+	display: none;
+}
+.meeting{
+	border: none;
+}
+.headlineall{
+	display: block;
+	width: 100%;
+	height: 30px;
+	border: none;
+	outline: none;
+}
+
+.activity_time{
+	margin-top: 10px;
+	border-bottom: 1px solid gainsboro;
+	padding-bottom: 5px;
+	box-sizing: border-box;
+}
+.activity_time span:nth-of-type(2){
+	display: flex;
+	font-size: 13px;
+	color: gray;
+	margin-top: 8px;
+	
+}
+.activity_time span:nth-of-type(2) input{
+	color: gray;
+	font-size: 13px;
+    outline:none;
+}
+.activity_time span:nth-of-type(2) input:nth-of-type(2){
+	margin-left: 8px;
+}
+.baoming{
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+.input{
+	display: block;
+	width: 100%;
+	height: 33px;
+	border:1px solid gainsboro;
+	border-radius: 5px;
+	outline: none;
+	margin-top: 8px;
+}
+.qita span{
+	display: block;
+	margin: auto;
+}
+.box #qita{
+	display: flex;
+	justify-content: center;
+}
+.box #qita img{
+	width: 19px;
+	transform:rotate(90deg);
+	transition: all 0.2s;
+}
+.luxurycx{
+	display: flex;
+	justify-content: space-between;
+}
+.luxurycx ul{
+	list-style-type: none;
+	border:1px solid gainsboro;
+	width: 45%;
+	height: 40%;
+	height: 387px;
+    overflow: scroll;
+}
+.luxurycx ul li{
+	border-bottom: 1px solid gainsboro;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+}
+.luxurycx .brand li{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.luxurycx .brand li img{
+	width: 19px;
+}
+.luxurycx{
+	display: none;
+}
+.circle{
+    display: block;
+    width: 85px;
+    height: 37px;
+    border-radius: 8px;
+    border: 1px solid gainsboro;
+    text-align: center;
+    line-height: 37px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.device{
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+.device .circle{
+	color: cornflowerblue;
+}
+.hint_footer span{
+	display: block;
+	margin-top: 10px;
+	font-size: 12px;
+	color: gray;
+}
+
+.hint_footer span p{
+	display: inline-block;
+	color: cornflowerblue;
+}
+.typeAll{
+	margin:10px 0 10px 0;
+}
+
+#file{
+	display: none;
+}
+.preview{
+	height: 337px;
+	display: none;
+}
+.wbk{
+	display:block;
+	width: 100%;
+	height: 50px;
+    border-radius: 10px 10px 0 0;
+    border:1px solid gainsboro;
+    border-bottom: none;
+    outline:none
+}
+.characterAll{
+	margin: 10px 0 10px 0;
+}
+.characterAll span{
+	display:block;
+	width: 100%;
+	height: 23px;
+	border:1px solid gainsboro;
+	border-top: none;
+	text-align: right;
+    border-radius: 0px 0px 10px 10px;
+}
+.tupian{
+	position: relative;
+	margin: 10px 0 10px 0;
+}
+.tupian span{
+	display: inline-block;
+	width: 50px;
+	height: 25px;
+	border: 1px solid gainsboro;
+	border-right: none;
+	border-radius: 13px 0 0 13px;
+	text-align: center;
+	line-height: 25px;
+	color: red;
+	position: absolute;
+	right: 0;
+	bottom: 70px;
+	font-size: 13px;
+}
+.tupian img{
+	display: block;
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+}
+.tupian textarea{
+    display: block;
+	background-color: #000000;
+	color: white;
+	width: 100%;
+	height: 44px;
+	outline:none;
+	border-radius: 0px 0px 10px 10px;
+}
+.boxAll{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.5);
+}
+.videoAll{
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.videoAll div{
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 1px solid gainsboro;
+	padding-top: 7px;
+	padding-bottom:7px ;
+	box-sizing: border-box;
+	font-size: 13px;
+}
+.videoAll .qxfooter{
+	color: cornflowerblue;
+}
+.videoAll .fsfooter{
+	color: gainsboro;
+}
+.videoAll input{
+	display: block;
+	border: none;
+	outline: none;
+	width: 100%;
+	margin-top: 10px;
+	padding-left: 20px;
+	font-size: 12px;
+}

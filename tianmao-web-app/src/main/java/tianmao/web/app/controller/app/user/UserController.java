@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tianmao.common.HttpCode;
 import tianmao.model.user.User;
-import tianmao.service.UserService;
+import tianmao.service.app.UserService;
 import tianmao.web.app.util.Rest;
 
 @RestController

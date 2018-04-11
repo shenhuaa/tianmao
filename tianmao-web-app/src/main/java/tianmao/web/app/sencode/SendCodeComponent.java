@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import tianmao.common.HttpCode;
 import tianmao.model.user.User;
-import tianmao.service.UserService;
+import tianmao.service.app.UserService;
 import tianmao.type.VerificationCodeType;
 import tianmao.web.app.util.Rest;
 import tianmao.web.app.util.ValidateUtil;

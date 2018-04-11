@@ -1,0 +1,12 @@
+jar {
+    baseName = 'web-admin'
+}
+
+dependencies {
+    compile project(':tianmao-redis')
+    compile project(':tianmao-application-config')
+    compile project(':tianmao-server-app:tianmao-app-service')
+    compile("commons-io:commons-io:${commonsIoVersion}")
+    /*compile("org.apache.poi:poi:${poiVersion}")
+    compile("org.apache.poi:poi-ooxml:${poiVersion}")*/
+}

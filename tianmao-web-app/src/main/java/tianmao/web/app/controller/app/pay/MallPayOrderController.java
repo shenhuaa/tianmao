@@ -17,7 +17,7 @@ import tianmao.common.BigDecimalUtil;
 import tianmao.common.DateUtil;
 import tianmao.common.HttpCode;
 import tianmao.common.RemoteClientIpUtil;
-import tianmao.service.UserService;
+import tianmao.service.app.UserService;
 import tianmao.service.exception.BaseServiceException;
 import tianmao.type.mall.MallOrderStatus;
 import tianmao.web.app.config.ChatAlipayConfig;
