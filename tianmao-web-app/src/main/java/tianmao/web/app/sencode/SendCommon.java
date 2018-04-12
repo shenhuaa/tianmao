@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import tianmao.common.HttpCode;
 import tianmao.common.RemoteClientIpUtil;
 import tianmao.model.sencode.VerificationCode;
-import tianmao.service.VerificationCodeService;
+import tianmao.service.app.VerificationCodeService;
 import tianmao.service.exception.BaseServiceException;
 import tianmao.type.VerificationCodeType;
 import tianmao.web.app.config.SMS;

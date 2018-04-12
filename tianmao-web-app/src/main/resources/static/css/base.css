@@ -1,0 +1,118 @@
+*{margin:0; padding:0;}
+html{font-size:62.5%;}
+body {font-family:"宋体";font-size:1.4rem;background: #fff;color: #111;}
+fieldset, img , buttom, a{ border:none; }
+ol, ul, li{ list-style:none;}
+h1, h2, h3, h4, h5, h6{ font-size:100%; font-weight:500;font-weight: normal;}
+em { font-style:normal; }
+input, button, select, textarea { outline:none; }
+input{font-size: 1.4rem;}
+textarea { resize:none;border:none; }
+a{ color: #333;font-size:1.4rem; text-decoration:none; cursor:pointer;}
+a.block{display: block;}
+i{ font-style:normal;vertical-align: middle;}
+.clear{clear: both;}
+img{width:100%;display: block;}
+button{display: block; text-align:center;cursor:pointer;border:none;color: #fff;margin: 0 auto;}
+:-moz-placeholder{color: #c3c2c7; opacity:1;}
+::-moz-placeholder{color: #c3c2c7;opacity:1;}
+input::-webkit-input-placeholder{color: #c3c2c7;opacity:1;}
+.clearfix:after { visibility: hidden; display: block;font-size: 0;content: " ";	clear: both;height: 0}
+.icon{display: inline-block;vertical-align: middle;background: url(../image/wancheleyuan/icon.png) no-repeat 0 0/20px auto;}
+.bgf{background: #fff;}
+.sign{padding: 20px;}
+.signlist{position: relative; padding: 15px 0;border-bottom: 1px solid #e1e3e6;}
+i.signicon1{float: left; width: 14px;height: 18px;background-position: 0 0;}
+i.signicon2{float: left; width: 14px;height: 18px;background-position: 0 -25px;}
+i.signicon3{float: left; width: 15px;height: 18px;background-position: 0 -47px;}
+i.signicon4{float: left; width: 15px;height: 18px;background-position: 0 -73px;}
+.cut{float: left; display: inline-block;width: 0;height: 14px;border-left: 1px solid #787878;margin: 2px 10px 0 10px;}
+.signlist input{border: none;float: left;width: 60%;}
+.signlist-sm{float: left;width: 55%;}
+.tips{font-size: 1.1rem;color: #fc6b6e;text-align: right;padding-right: 25px;margin-top: 2px;}
+.signlist-smtips{padding-right: 48%;}
+.takey{float: left;width: 45%;padding: 15px 0;text-align: center;color: #c3c2c7;font-weight: normal;font-size: 1.4rem;background: #fff;}
+.takey.on{color: #5496ff;}
+.takey span{font-size: 1.4rem;color: #c3c2c7;}
+.agree{margin: 15px 0 25px;font-size: 1.2rem;}
+i.agreeicon{width: 15px;height: 15px;margin-bottom: 2px; background-position: 0 -98px;}
+i.agreeiconed{background-position: 0 -120px;}
+.agree a{color: #5496ff;font-size: 1.2rem;}
+.actbtn{width: 100%;height: 39px;background: #cedbef;border-radius: 5px;font-size: 1.6rem;}
+.actbtn.on{background: #5496ff;}
+
+.boom{display: none;}
+.boombg{position: fixed;top: 0;right: 0;bottom: 0;left: 0;background: rgba(0,0,0,.4);}
+.boomcon{position: absolute;top: 50%;left: 50%;width: 280px;margin: -80px 0 0 -140px;background: #fff;border-radius: 8px;}
+.boomcon p{text-align: center;font-size: 1.6rem;color: #333;padding: 45px 10px;}
+.option{height: 45px;border-top: 1px solid #e1e3e6;}
+.optionbtn{float: left;width: 100%;line-height: 45px;font-size: 1.4rem;}
+.closebtn{color: #999;background: #f5f7fa;border-radius: 0 0 0 8px;}
+.againbtn{color: #5496ff;background: #fff;border-radius: 0 0 8px 0;}
+
+.fixed{width: 60px;height: 60px;position: fixed;right: 10px;bottom: 50px;}
+.fixed img{width: 60px;height: 60px;}
+
+
+*{margin:0; padding:0;}
+html{font-size:62.5%;}
+body {font-family:"宋体";font-size:1.4rem;background: #fff;color: #111;}
+fieldset, img , buttom, a{ border:none; }
+ol, ul, li{ list-style:none;}
+h1, h2, h3, h4, h5, h6{ font-size:100%; font-weight:500;font-weight: normal;}
+em { font-style:normal; }
+input, button, select, textarea { outline:none; }
+input{font-size: 1.4rem;}
+textarea { resize:none;border:none; }
+a{ color: #333;font-size:1.4rem; text-decoration:none; cursor:pointer;}
+.red{
+    color: #333;
+    font-size: 1.4rem;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    bottom: 11rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+a.block{display: block;}
+i{ font-style:normal;vertical-align: middle;}
+.clear{clear: both;}
+img{width:100%;display: block;}
+
+html{width: 100%;height: 100%;overflow: hidden;}
+body{width: 100%;height: 100%;overflow: hidden;}
+
+.downbox{width: 40%;background: #000;position: absolute;top: 50%;left: 30%;margin-top: -70px;}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+	.downbox{width: 30%;background: #000;position: absolute;top: 50%;left: 35%;margin-top: -110px;}
+}
+@media (min-width: 1023px) {
+	.downbox{width: 30%;background: #000;position: absolute;top: 50%;left: 35%;margin-top: -140px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

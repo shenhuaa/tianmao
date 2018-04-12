@@ -7,4 +7,5 @@ include ':tianmao-server-app:tianmao-app-serviceImpl'
 include 'tianmao-web-app'
 include 'tianmao-mybatis'
 include 'tianmao-redis'
+include 'tianmao-web-admin'
 

@@ -12,7 +12,7 @@ druid:
   username: root
   #root
   password: bNVOqb7WKLX5Bjnw+LMv92taj25KOxDimXxILPQjw42wgv+1lHzOH8kr97xDwWdhpY67QuYCS7sWN4W46YbkFA==
-  url: jdbc:mysql://10.10.20.14:3306/istore?cuseUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true
+  url: jdbc:mysql://127.0.0.1:3306/istore?cuseUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true
   #123456
   #password: Biyu5YzU+6sxDRbmWEa3B2uUcImzDo0BuXjTlL505+/pTb+/0Oqd3ou1R6J8+9Fy3CYrM18nBDqf6wAaPgUGOg==
   #url: jdbc:mysql://192.168.0.103:3306/tianmao?cuseUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true

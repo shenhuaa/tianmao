@@ -3,7 +3,7 @@ package tianmao.web.app.controller.app.common;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tianmao.dto.user.MessageContentDto;
-import tianmao.service.MessageTemplateService;
+import tianmao.service.app.MessageTemplateService;
 import tianmao.type.user.MessageTemplateType;
 import tianmao.web.app.util.JPushUtil;
 import java.util.HashMap;

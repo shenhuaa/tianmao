@@ -1,0 +1,27 @@
+#tomcat端口号
+server:
+  port: ${web.admin.port}
+  #404页面配置(server 不能这么配置)
+  error:
+    path: ${web.error.path}
+
+#应用名称
+spring:
+  application:
+    name: ${web.admin.name}
+  resources:
+    add-mappings: false
+
+
+#日志保存路径
+logging:
+  path: ${web.admin.logging}
+
+#eureka客户端配置
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: ${cloud.eureka.cluster}
