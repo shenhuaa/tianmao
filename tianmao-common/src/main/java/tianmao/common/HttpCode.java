@@ -9,6 +9,8 @@ package tianmao.common;
 public enum HttpCode {
 
     OK(200, "成功"),
+    UNAUTHORIZED(401 , "用户未登陆"),
+    FORBIDDEN(403, "访问没有权限"),
     NOT_FOUND(404, "路径不存在"),
     ERROR(500, "操作失败500"),
 

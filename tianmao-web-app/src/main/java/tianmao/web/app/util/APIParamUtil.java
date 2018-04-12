@@ -36,7 +36,7 @@ public abstract class APIParamUtil {
             out = response.getWriter();
             String jsonText = JSON.toJSONString(obj, true);
             out = response.getWriter();
-            response.setStatus(HttpStatus.SC_FORBIDDEN);
+            response.setStatus(HttpStatus.SC_OK);
             out.print(jsonText);
         } catch (Exception e) {
             logger.info("出错!", e);

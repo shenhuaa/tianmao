@@ -27,6 +27,10 @@ public class AppWebMvcConfigurer extends WebMvcSupportConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         String[] excludePathPatterns = new String[]{
                 "/user/common",
+                "/error",
+                "/404",
+                "/500",
+                "/403",
                 "/login",
                 "/help"
         };
