@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public PageInfo<User> selectList() {
         List<User> usersList = userMapper.selectAll();
-        if(1 == 1) {
+        if(true == true) {
             throw new BaseServiceException(HttpCode.ILLEGAL_REQUEST,"测试抛service异常");
         }
         return new PageInfo<>(usersList);

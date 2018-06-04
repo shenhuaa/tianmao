@@ -29,6 +29,9 @@ public class AppWebMvcConfigurer extends WebMvcSupportConfigurer {
                 "/user/common",
                 "/error",
                 "/404",
+                "/swagger-resources/**", //接口文档放行
+                "/swagger-ui.html",    //接口文档放行
+                "/v2/api-docs",         //接口文档放行
                 "/500",
                 "/403",
                 "/login",
