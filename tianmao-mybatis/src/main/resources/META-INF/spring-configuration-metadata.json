@@ -2,144 +2,144 @@
   "hints": [],
   "groups": [
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid",
-      "type": "tianmao.mybatis.config.DruidProperties"
+      "type": "com.tianmao.mybatis.config.DruidProperties"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidMonitorProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidMonitorProperties",
       "name": "druid.monitor",
-      "type": "tianmao.mybatis.config.DruidMonitorProperties"
+      "type": "com.tianmao.mybatis.config.DruidMonitorProperties"
     }
   ],
   "properties": [
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.connection-properties",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.driver-class",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.filters",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.initial-size",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.max-active",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.max-pool-prepared-statement-per-connection-size",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.max-wait",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.min-evictable-idle-time-millis",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.min-idle",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidMonitorProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidMonitorProperties",
       "name": "druid.monitor.allow",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidMonitorProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidMonitorProperties",
       "name": "druid.monitor.deny",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidMonitorProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidMonitorProperties",
       "name": "druid.monitor.druid-stat-view",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidMonitorProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidMonitorProperties",
       "name": "druid.monitor.druid-web-stat-filter",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidMonitorProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidMonitorProperties",
       "name": "druid.monitor.exclusions",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidMonitorProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidMonitorProperties",
       "name": "druid.monitor.login-password",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidMonitorProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidMonitorProperties",
       "name": "druid.monitor.login-username",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidMonitorProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidMonitorProperties",
       "name": "druid.monitor.reset-enable",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.password",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.pool-prepared-statements",
       "type": "java.lang.Boolean"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.test-on-borrow",
       "type": "java.lang.Boolean"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.test-on-return",
       "type": "java.lang.Boolean"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.test-while-idle",
       "type": "java.lang.Boolean"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.time-between-eviction-runs-millis",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.url",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.username",
       "type": "java.lang.String"
     },
     {
-      "sourceType": "tianmao.mybatis.config.DruidProperties",
+      "sourceType": "com.tianmao.mybatis.config.DruidProperties",
       "name": "druid.validation-query",
       "type": "java.lang.String"
     }

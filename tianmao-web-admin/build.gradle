@@ -7,6 +7,15 @@ dependencies {
     compile project(':tianmao-application-config')
     compile project(':tianmao-server-app:tianmao-app-service')
     compile("commons-io:commons-io:${commonsIoVersion}")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.cloud:spring-cloud-starter-eureka")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-websocket")
+    compile("org.springframework.boot:spring-boot-starter-freemarker")
+    compile("com.netflix.feign:feign-okhttp:${feignOkhttVersion}")
+    compile("cn.jpush.api:jpush-client:${jpushClientVersion}")
+    compile("eu.bitwalker:UserAgentUtils:${userAgentUtilsVersion}")
+    compile("net.coobird:thumbnailator:${thumbnailatorVersion}")
     /*compile("org.apache.poi:poi:${poiVersion}")
     compile("org.apache.poi:poi-ooxml:${poiVersion}")*/
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="tianmao.admin.mapper.AdminMapper">
+<mapper namespace="com.tianmao.admin.mapper.AdminMapper">
 
-    <resultMap id="default" type="tianmao.model.user.Admin"/>
+    <resultMap id="default" type="com.tianmao.model.user.Admin"/>
 
-    <select id="getAdminByUsername" resultType="tianmao.model.user.Admin">
+    <select id="getAdminByUsername" resultType="com.tianmao.model.user.Admin">
         SELECT * FROM admin
         WHERE username = #{username}
     </select>

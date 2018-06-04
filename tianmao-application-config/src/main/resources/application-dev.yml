@@ -15,6 +15,12 @@ web:
     logging: web-app
     url: ${web.domain}:${web.app.port}
 
+  admin:
+      port: 8083
+      name: istore-web-admin
+      logging: web-admin
+      url: ${web.domain}:${web.admin.port}
+
 
   image:
     url: ${web.domain}
@@ -41,6 +47,7 @@ cloud:
     port: 9001
     name: tianmao-cloud-admin
     logging: cloud-admin
+
 
 
 #文件存储路径

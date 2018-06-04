@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="tianmao.admin.mapper.PermissionMapper">
+<mapper namespace="com.tianmao.admin.mapper.PermissionMapper">
 
-    <resultMap id="default" type="tianmao.model.user.Permission"/>
+    <resultMap id="default" type="com.tianmao.model.user.Permission"/>
 
-    <resultMap id="containParent" type="tianmao.model.user.Permission" autoMapping="true">
+    <resultMap id="containParent" type="com.tianmao.model.user.Permission" autoMapping="true">
         <id property="id" column="id"/>
-        <association property="parent" column="id" javaType="tianmao.model.user.Permission">
+        <association property="parent" column="id" javaType="com.tianmao.model.user.Permission">
             <id property="id" column="parent_id"/>
             <result property="name" column="parent_name"/>
         </association>
     </resultMap>
 
-    <insert id="create" parameterType="tianmao.model.user.Permission" useGeneratedKeys="true" keyProperty="id">
+    <insert id="create" parameterType="com.tianmao.model.user.Permission" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO admin_permission (`parent_id`, `name`, `mark`, `link`, `icon`, `sort`)
         VALUES (#{parent.id}, #{name}, #{mark}, #{link}, #{icon}, #{sort});
     </insert>
 
-    <update id="update" parameterType="tianmao.model.user.Permission">
+    <update id="update" parameterType="com.tianmao.model.user.Permission">
         UPDATE admin_permission
         <set>
             `name`      = #{name},

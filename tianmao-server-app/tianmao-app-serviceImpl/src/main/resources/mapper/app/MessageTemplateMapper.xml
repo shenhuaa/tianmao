@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="tianmao.app.mapper.MessageTemplateMapper">
+<mapper namespace="com.tianmao.app.mapper.MessageTemplateMapper">
 
-    <resultMap id="default" type="tianmao.model.user.MessageTemplate"/>
+    <resultMap id="default" type="com.tianmao.model.user.MessageTemplate"/>
 
     <select id="getMessageTemplateByMessageType" resultMap="default">
         SELECT * FROM system_message_template
