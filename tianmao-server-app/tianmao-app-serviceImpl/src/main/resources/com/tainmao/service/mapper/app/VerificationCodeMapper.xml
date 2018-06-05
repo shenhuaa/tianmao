@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.tianmao.app.mapper.VerificationCodeMapper">
+<!DOCTYPE com.tainmao.service.impl.mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-com.tainmao.service.impl.mapper.dtd" >
+<com.tainmao.service.impl.mapper namespace="com.tianmao.app.com.tainmao.service.impl.mapper.VerificationCodeMapper">
    <resultMap id="default" type="com.tianmao.model.sencode.VerificationCode"></resultMap>
 
     <select id="getByUsername" resultMap="default">
@@ -33,4 +33,4 @@
         AND verification_code = #{code}
     </update>
 
-</mapper>
+</com.tainmao.service.impl.mapper>

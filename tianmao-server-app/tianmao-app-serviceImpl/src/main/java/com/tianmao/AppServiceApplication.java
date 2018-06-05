@@ -15,7 +15,7 @@ import java.net.UnknownHostException;
 
 //@EnableHystrix
 @SpringBootApplication
-@MapperScan("com.tianmao.*.mapper")
+@MapperScan("com.tianmao.*.com.tainmao.service.impl.mapper")
 @EnableFeignClients
 @EnableDiscoveryClient
 public class AppServiceApplication {
