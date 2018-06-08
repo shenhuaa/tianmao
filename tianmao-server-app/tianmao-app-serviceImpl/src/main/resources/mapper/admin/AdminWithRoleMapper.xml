@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tianmao.service.admin.mapper.AdminWithRoleMapper">
+
+    <resultMap id="default" type="com.tianmao.service.model.user.Role"/>
+
+    <update id="updateAdminWithRole">
+      update admin_with_role
+       SET role_id = #{roleId}
+      where admin_id = #{adminId}
+    </update>
+    <insert id="insertAdminWithRole">
+        INSERT INTO admin_with_role (admin_id,role_id) VALUES
+        (#{adminId},#{roleId})
+    </insert>
+    <select id="getRoleByAdminId" resultMap="default">
+        SELECT
+          ar.id,
+          ar.name
+        FROM
+          admin_role ar
+        JOIN admin_with_role awr
+          ON awr.`role_id` = ar.id
+        JOIN admin a
+          ON a.`id` = awr.admin_id
+          AND a.`id` =  #{adminId}
+    </select>
+
+    <select id="hasRoleByAdminId" resultType="boolean">
+        SELECT count(r.id)
+        FROM admin_role r, admin_role u_w_r
+        WHERE u_w_r.user_id = #{userId}
+          AND r.id = u_w_r.role_id
+          AND r.id = #{roleId};
+    </select>
+
+    <insert id="addAdminRoles" parameterType="map">
+        INSERT INTO admin_role (user_id, role_id) VALUES
+        <foreach collection="roles" separator="," item="role">
+            (#{userId}, #{role})
+        </foreach>
+    </insert>
+
+    <delete id="deleteByAdminId" parameterType="long">
+        DELETE FROM admin_role
+        WHERE user_id = #{userId};
+    </delete>
+
+    <delete id="deleteAdminRoles" parameterType="map">
+        DELETE FROM admin_role
+        WHERE user_id = #{userId} AND role_id IN (
+        <foreach collection="rolesId" separator="," item="id">
+            #{id}
+        </foreach>
+        );
+    </delete>
+
+    <select id="getByMark" resultType="string">
+        SELECT distinct u.id FROM admin_role r, admin_role u_w_r, users u WHERE r.id = u_w_r.role_id AND u.id =
+        u_w_r.user_id AND r.mark IN(
+        <foreach collection="marks" separator="," item="mark">
+            #{mark}
+        </foreach>
+        );
+    </select>
+
+    <select id="getTotal" resultType="int">
+        SELECT COUNT(distinct u.id) FROM admin_role r, admin_role u_w_r, users u WHERE r.id = u_w_r.role_id AND u.id =
+        u_w_r.user_id AND r.mark IN(
+        <foreach collection="marks" separator="," item="mark">
+            #{mark}
+        </foreach>
+        );
+    </select>
+
+    <insert id="createWithRole" parameterType="boolean">
+        INSERT INTO admin_role(adminId, role_id) VALUES
+        <foreach collection="roles" separator="," item="role">
+            (#{adminId}, #{role})
+        </foreach>
+    </insert>
+
+    <select id="getRoleIdsByAdminId" resultType="java.lang.Long">
+        SELECT r.id
+        FROM admin_role r, admin_role u_w_r
+        WHERE u_w_r.user_id = #{userId}
+        AND r.id = u_w_r.role_id;
+    </select>
+
+</mapper>

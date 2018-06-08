@@ -1,11 +1,11 @@
 package com.tianmao.service.admin;
 
 import com.github.pagehelper.PageInfo;
-import com.tianmao.dto.user.AdminDtoFilter;
+import com.tianmao.service.dto.user.AdminDtoFilter;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.tianmao.model.user.Admin;
+import com.tianmao.service.model.user.Admin;
 
 import java.util.List;
 

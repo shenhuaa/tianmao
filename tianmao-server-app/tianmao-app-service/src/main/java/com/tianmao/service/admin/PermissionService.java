@@ -1,6 +1,6 @@
 package com.tianmao.service.admin;
 
-import com.tianmao.model.user.Permission;
+import com.tianmao.service.model.user.Permission;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

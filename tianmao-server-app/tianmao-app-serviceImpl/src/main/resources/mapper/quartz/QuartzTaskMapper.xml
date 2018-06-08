@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tianmao.service.quartz.mapper.QuartzTaskMapper">
+
+    <resultMap id="default" type="com.tianmao.service.model.quartzs.QuartzTask"/>
+
+    <insert id="create" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO quartz_task (`user_id`, `data_id`, `task_name`, `task_group`, `status`, `start_time`, `cron_expression`, `module`, `create_time`)
+        VALUES (#{userId}, #{dataId}, #{taskName}, #{taskGroup}, #{status}, #{startTime}, #{cronExpression}, #{module}, #{createTime});
+    </insert>
+
+    <update id="updateStatus">
+        UPDATE quartz_task
+        SET status = #{taskStatus},
+          update_time = #{updateTime}
+        WHERE id = #{taskId}
+    </update>
+
+    <update id="updateStopTask">
+        UPDATE quartz_task
+        SET status = 2
+        WHERE id = #{id}
+    </update>
+
+    <select id="getById" resultMap="default">
+        SELECT * FROM quartz_task
+        WHERE id = #{id}
+    </select>
+
+    <select id="getListByModule" resultMap="default">
+        SELECT * FROM quartz_task
+        WHERE `module` = #{module}
+          AND status = #{quartzTask.status}
+          ORDER BY start_time DESC
+    </select>
+
+    <select id="totalByModule" resultType="integer">
+        SELECT count(*) FROM quartz_task
+        WHERE `module` = #{module}
+          AND status = #{status.index}
+    </select>
+
+    <select id="getByDataId" resultMap="default">
+        SELECT * FROM quartz_task
+        WHERE data_id = #{dataId}
+          AND status = #{status}
+          AND task_group = #{group}
+    </select>
+
+    <select id="getQuartzTask" resultMap="default">
+        SELECT * FROM quartz_task
+        WHERE data_id = #{dataId}
+    </select>
+
+</mapper>

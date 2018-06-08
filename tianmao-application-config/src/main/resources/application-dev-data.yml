@@ -6,6 +6,17 @@ spring:
     password:
     database: 0
 
+  #mq配置
+    rabbitmq:
+      host: 10.10.20.168
+      port: 5672
+      username: admin
+      password: 123456
+      publisher-confirms: true
+      virtual-host: /
+      listener:
+          simple:
+            auto-startup: false
 
 #mysql配置
 druid:
@@ -40,4 +51,27 @@ druid:
     login-password: 123456
     exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
     reset-enable: false
+
+#quartz集群配置
+quartz:
+  #线程调度器id
+  instanceId: istore
+  # 线程调度器实例名,集群节点中必须相同
+  instanceName: quartzScheduler
+  #不更新检测新版本
+  skipUpdateCheck: true
+   # 线程池的线程数，即最多10个任务同时跑
+  threadCount: 10
+  #等待多久quartz开始执行（秒）
+  startupDelay: 10
+  # 如何存储任务和触发器等信息
+  jobStoreClass: org.quartz.impl.jdbcjobstore.JobStoreTX
+  # 驱动代理
+  driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+  # 表前缀
+  tablePrefix: qrtz_
+  # 数据源
+  dataSource: mysql
+  # 是否集群
+  isClustered: true
 

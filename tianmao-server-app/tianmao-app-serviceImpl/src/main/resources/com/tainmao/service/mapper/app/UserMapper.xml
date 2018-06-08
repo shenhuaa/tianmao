@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE com.tainmao.service.impl.mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-com.tainmao.service.impl.mapper.dtd" >
-<com.tainmao.service.impl.mapper namespace="com.tianmao.app.com.tainmao.service.impl.mapper.UserMapper">
-
-    <resultMap id="default" type="com.tianmao.model.user.User" autoMapping="true"></resultMap>
-
-
-
-</com.tainmao.service.impl.mapper>

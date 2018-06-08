@@ -6,6 +6,14 @@ dependencies {
     compile project(':tianmao-mybatis')
     compile project(':tianmao-application-config')
     compile project(':tianmao-server-app:tianmao-app-service')
+    compile project(':tianmao-common-model')
+    compile("org.quartz-scheduler:quartz:${quartzVersion}")
+    compile("org.springframework:spring-context-support")
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
+
+
+
+
+
 
 }
