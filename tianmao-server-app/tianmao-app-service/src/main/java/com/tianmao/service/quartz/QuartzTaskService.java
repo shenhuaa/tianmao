@@ -16,19 +16,15 @@ import java.util.List;
  * @author roach
  * @date 2018/3/14
  */
-@FeignClient(name = "${server.app.name}")
 public interface QuartzTaskService {
 
-    @RequestMapping(value = "/quartz/task/create")
     boolean create(QuartzTask quartzTask);
 
-    @RequestMapping(value = "/quartz/task/getById")
     QuartzTask getById(@RequestParam("id") Long id);
 
-    @RequestMapping(value = "/quartz/task/getListByModule")
     List<QuartzTask> getListByModule(@RequestParam("module") String module, QuartzTaskDtoFilter filter);
 
-    @RequestMapping(value = "/quartz/task/totalByModule")
+
     int totalByModule(@RequestParam("module") String module, TaskStatus taskStatus);
 
     /**
@@ -38,14 +34,12 @@ public interface QuartzTaskService {
      * @param taskStatus
      * @return
      */
-    @RequestMapping(value = "/quartz/task/updateStatus")
     boolean updateStatus(@RequestParam("taskId") Long taskId, TaskStatus taskStatus);
 
     /**
      * 取消任务调度
      * @return
      */
-    @RequestMapping(value = "/quartz/task/updateStopJob")
     boolean updateStopJob(@RequestParam("dataId") Long dataId, TaskGroup group);
 
     /**
@@ -53,7 +47,6 @@ public interface QuartzTaskService {
      *
      * @return
      */
-    @RequestMapping(value = "/quartz/task/getQuartzTaskByOrderId")
     QuartzTask getQuartzTaskByOrderId(@RequestParam("orderId") Long orderId);
 
 }

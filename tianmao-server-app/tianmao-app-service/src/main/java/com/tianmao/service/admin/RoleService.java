@@ -14,7 +14,6 @@ import java.util.List;
  * @author roach
  * @date 2017/12/2
  */
-@FeignClient(name = "${server.app.name}")
 public interface RoleService {
 
     /**
@@ -23,7 +22,6 @@ public interface RoleService {
      * @param role 如果角色ID为空将创建，否则更新。
      * @return 创建成功后的ID，失败则为空字符串
      */
-    @RequestMapping(value = "/role/update")
     boolean update(Role role) ;
 
     /**
@@ -32,7 +30,6 @@ public interface RoleService {
      * @param roleId
      * @return
      */
-    @RequestMapping(value = "/role/delete")
     boolean delete(@RequestParam("roleId") Long roleId);
 
     /**
@@ -41,7 +38,6 @@ public interface RoleService {
      * @param roleId
      * @return
      */
-    @RequestMapping(value = "/role")
     Role getRoleById(@RequestParam("roleId") Long roleId);
 
     /**
@@ -50,18 +46,13 @@ public interface RoleService {
      * @param adminId
      * @return
      */
-    @RequestMapping(value = "/role/adminId")
     List<Role> getRoleByAdminId(@RequestParam("adminId") Long adminId);
 
-    @RequestMapping(value = "/role/roles")
     List<Role> getRolesByIds(@RequestParam("ids") List<String> ids);
 
-    @RequestMapping(value = "/role/ids/adminId")
     List<Long> getRoleIdsByAdminId(@RequestParam("adminId") Long adminId);
 
-    @RequestMapping(value = "/role/pageInfo")
     PageInfo<Role> getPageInfo(RoleDtoFilter filter);
 
-    @RequestMapping(value = "/role/getRoleList")
     List<Role> getRoleList();
 }

@@ -1,4 +1,5 @@
 package com.tianmao.service.web.admin.shiro;
+import com.tianmao.api.app.UserClient;
 import com.tianmao.service.common.CurrentUser;
 import com.tianmao.service.app.UserService;
 import com.tianmao.service.type.user.UserStatus;
@@ -24,7 +25,7 @@ public class AccountAutoLoginRealm extends AuthorizingRealm {
     private static final Logger logger = LoggerFactory.getLogger(AccountAutoLoginRealm.class);
 
     @Autowired
-    private UserService userService;
+    private UserClient userClient;
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
@@ -40,7 +41,7 @@ public class AccountAutoLoginRealm extends AuthorizingRealm {
         if (logger.isDebugEnabled()) {
             logger.debug("用户[{}]正尝试登录..", username);
         }
-        User user = userService.getUserById(username);
+        User user = userClient.getUserById(username);
         if (user == null) {
             logger.warn("用户[{}]不存在", username);
             throw new UnknownAccountException();

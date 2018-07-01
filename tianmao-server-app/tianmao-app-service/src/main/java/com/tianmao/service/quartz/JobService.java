@@ -14,7 +14,6 @@ import java.util.List;
  * @author roach
  * @date 2018/3/14
  */
-@FeignClient(name = "${server.app.name}")
 public interface JobService {
 
     /**
@@ -22,7 +21,6 @@ public interface JobService {
      *
      * @param quartzTask
      */
-    @RequestMapping(value = "/job/add")
     void addJob(QuartzTask quartzTask);
 
     /**
@@ -30,7 +28,6 @@ public interface JobService {
      *
      * @param quartzTasks
      */
-    @RequestMapping(value = "/job/adds")
     void addJobs(List<QuartzTask> quartzTasks);
 
 
@@ -40,7 +37,6 @@ public interface JobService {
      * @param group
      * @return
      */
-    @RequestMapping(value = "/job/stop")
     boolean stopJob(@RequestParam("taskId") Long taskId, TaskGroup group);
 
     /**
@@ -48,7 +44,6 @@ public interface JobService {
      * @param quartzTask
      * @return
      */
-    @RequestMapping(value = "/job/stops")
     boolean stopJobs(QuartzTask quartzTask);
 
 

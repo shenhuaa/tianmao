@@ -43,7 +43,7 @@ public class InitQuartzTask {
             public void run() {
                 try {
                     //睡60秒，等服务启动完成再执行任务
-                    TimeUnit.SECONDS.sleep(30);
+                    TimeUnit.SECONDS.sleep(60);
                 } catch (InterruptedException e) {
                     logger.error(e.getMessage(), e);
                 }

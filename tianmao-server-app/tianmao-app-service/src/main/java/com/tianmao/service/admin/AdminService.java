@@ -14,10 +14,8 @@ import java.util.List;
  * @author roach
  * @date 2017/12/2
  */
-@FeignClient(name = "${server.app.name}")
 public interface AdminService {
 
-    @RequestMapping(value = "/admin/save")
     Admin save(Admin admin);
 
     /**
@@ -26,10 +24,8 @@ public interface AdminService {
      * @param adminId
      * @return
      */
-    @RequestMapping(value = "/admin/id")
     Admin getAdminById(@RequestParam("adminId") Long adminId);
 
-    @RequestMapping(value = "/admin/username")
     Admin getAdminByUsername(@RequestParam("username") String username);
 
     /**
@@ -39,10 +35,8 @@ public interface AdminService {
      * @param newPassword
      * @return
      */
-    @RequestMapping(value = "/admin/updatePassword")
     boolean updatePassword(@RequestParam("id") Long id, @RequestParam("newPassword") String newPassword);
 
-    @RequestMapping(value = "/admin/getPageInfo")
     PageInfo<Admin> getPageInfo(AdminDtoFilter filter);
 
     /**
@@ -51,7 +45,6 @@ public interface AdminService {
      * @param status
      * @return
      */
-    @RequestMapping(value = "/admin/updateStatus")
     boolean updateStatus(@RequestParam("id") Long id, @RequestParam("status") Integer status);
 
     /**
@@ -59,7 +52,6 @@ public interface AdminService {
      * @param admin
      * @return
      */
-    @RequestMapping(value = "/admin/update")
     boolean update(Admin admin);
 
     /**
@@ -67,6 +59,5 @@ public interface AdminService {
      * @param userId
      * @return
      */
-    @RequestMapping(value = "/admin/getAdminRoleById")
     List<Admin> getAdminRoleById(@RequestParam("userId") Long userId);
 }

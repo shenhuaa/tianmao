@@ -1,7 +1,10 @@
 
 package com.tianmao.service.web.admin.shiro;
+import com.tianmao.api.admin.AdminClient;
+import com.tianmao.api.admin.PermissionClient;
 import com.tianmao.service.common.CurrentUser;
 import com.tianmao.service.admin.AdminService;
+import com.tianmao.service.model.user.Permission;
 import com.tianmao.service.type.user.UserStatus;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -33,10 +36,10 @@ public class AdminShiroRealm extends AuthorizingRealm {
     private static final Logger logger = LoggerFactory.getLogger(AdminShiroRealm.class);
 
     @Autowired
-    private AdminService adminService;
+    private AdminClient adminClient;
 
     @Autowired
-    private PermissionService permissionService;
+    private PermissionClient permissionClient;
 
 
     @Override
@@ -48,7 +51,7 @@ public class AdminShiroRealm extends AuthorizingRealm {
         if (logger.isDebugEnabled()) {
             logger.debug("用户[{}]正尝试登录..", username);
         }
-        Admin admin = adminService.getAdminByUsername(username);
+        Admin admin = adminClient.getAdminByUsername(username);
         if (null == admin) {
             logger.warn("后台用户[{}]不存在", username);
             throw new UnknownAccountException();
@@ -77,7 +80,7 @@ public class AdminShiroRealm extends AuthorizingRealm {
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         CurrentUser currentUser = (CurrentUser) getAvailablePrincipal(principals);
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        info.setStringPermissions(permissionService.getPermissionMarksByAdminId(currentUser.getId()));
+        info.setStringPermissions(permissionClient.getPermissionMarksByAdminId(currentUser.getId()));
         if (0 == info.getStringPermissions().size()) {
             logger.debug("当前用户[{}]无任何权限", currentUser.getUsername());
         }

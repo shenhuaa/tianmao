@@ -10,13 +10,13 @@ web:
   proxy-domain: http://huangliuhai.wicp.net
 
   app:
-    port: 8090
+    port: 8081
     name: tianmao-web-app
     logging: web-app
     url: ${web.domain}:${web.app.port}
 
   admin:
-      port: 8083
+      port: 8082
       name: istore-web-admin
       logging: web-admin
       url: ${web.domain}:${web.admin.port}

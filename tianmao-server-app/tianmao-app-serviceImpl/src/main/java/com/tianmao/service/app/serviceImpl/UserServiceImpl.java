@@ -40,4 +40,9 @@ public class UserServiceImpl implements UserService {
     public User registerAccountBind(@RequestBody User user) {
         return null;
     }
+
+    @Override
+    public void getException() {
+        throw new BaseServiceException(HttpCode.ILLEGAL_REQUEST,"测试抛异常了");
+    }
 }
