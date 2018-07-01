@@ -6,9 +6,12 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.tianmao.app.config.AppContext;
 import com.tianmao.app.converter.*;
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -20,9 +23,10 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimeZone;
+import java.util.function.Consumer;
 
 /**
- * 放行静态资源
+ * WebMvc全局配置
  * Created by roach on 2017/6/2.
  */
 @Configuration
@@ -31,6 +35,17 @@ public class WebMvcSupportConfigurer extends WebMvcConfigurerAdapter {
     @Bean
     public AppContext appContext() {
         return new AppContext();
+    }
+
+    /**
+     * 配置项目404路径
+     * @return
+     */
+    @Bean
+    public EmbeddedServletContainerCustomizer containerCustomizer() {
+        return container -> {
+            container.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/404"));
+        };
     }
 
     @Override
