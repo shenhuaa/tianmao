@@ -2,6 +2,7 @@ package com.tianmao.app.interceptor;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 
 /**
@@ -20,14 +21,25 @@ public class AppWebMvcConfigurer extends WebMvcSupportConfigurer {
 
     /**
      * 拦截器
-     *添加过滤放行的方法
+     * 添加过滤放行的方法
+     *
      * @param registry
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        String[] excludePathPatterns = new String[]{
+
+        InterceptorRegistration interceptorRegistration = registry.addInterceptor(authenticationHandlerInterceptor());
+
+        interceptorRegistration.excludePathPatterns(excludePathRelease());
+    }
+
+    /**
+     * 拦截器
+     *添加过滤放行的方法
+     */
+    public static String[] excludePathRelease() {
+        return new String[]{
                 "/user/common",
-                "/user/**",
                 "/error",
                 "/404",
                 "/swagger-resources/**", //接口文档放行
@@ -38,9 +50,6 @@ public class AppWebMvcConfigurer extends WebMvcSupportConfigurer {
                 "/login",
                 "/help"
         };
-        registry.addInterceptor(authenticationHandlerInterceptor())
-                .excludePathPatterns(excludePathPatterns);
     }
-
 }
 

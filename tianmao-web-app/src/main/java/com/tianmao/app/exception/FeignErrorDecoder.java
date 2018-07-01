@@ -2,6 +2,7 @@ package com.tianmao.app.exception;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tianmao.service.exception.BaseServiceException;
 import feign.FeignException;
 import feign.Response;
 import feign.Util;
@@ -9,7 +10,6 @@ import feign.codec.ErrorDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.tianmao.service.common.HttpCode;
-import com.tianmao.service.exception.BaseServiceException;
 
 import java.util.Map;
 

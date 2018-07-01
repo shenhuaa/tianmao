@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tianmao.service.common.HttpCode;
 import com.tianmao.app.util.Rest;
 import com.tianmao.app.config.AppContext;
+import com.tianmao.service.exception.BaseServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.multipart.MultipartException;
-import com.tianmao.service.exception.BaseServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,11 +42,16 @@ public class ExceptionHandlerController {
      * @param e
      * @throws Exception
      */
+    //返回视图页面
     @ExceptionHandler(Exception.class)
     public String serverError(HttpServletRequest request, HttpServletResponse response, Exception e) throws Exception {
         String requestURI = request.getRequestURI();
         String message = "";
         HttpCode httpCode = HttpCode.ERROR;
+        if(requestURI.equals("/error")) {
+            message = "找不到路径";
+            httpCode =HttpCode.NOT_FOUND;
+        }
         if (e instanceof BaseServiceException) {
             BaseServiceException baseServiceException = (BaseServiceException) e;
             String codeMessage = baseServiceException.getMessage();
@@ -78,7 +83,12 @@ public class ExceptionHandlerController {
             message = String.format("缺少[%s]参数", parameterName);
             httpCode = HttpCode.MISSING_PARAMETERS;
             logger.warn("[{}，{}]", requestURI, message);
-        } else if (e instanceof MethodArgumentTypeMismatchException) {
+        } else if (e instanceof IllegalStateException) {
+            IllegalStateException parameterException = (IllegalStateException) e;
+            String parameterName = parameterException.getMessage();
+            logger.warn("[{}，{}]", requestURI, parameterName);
+        }
+        else if (e instanceof MethodArgumentTypeMismatchException) {
             MethodArgumentTypeMismatchException mismatchException = (MethodArgumentTypeMismatchException) e;
             String name = mismatchException.getName();
             message = String.format("[%s]参数类型异常", name);
@@ -115,8 +125,6 @@ public class ExceptionHandlerController {
         }
         return "500";
     }
-
-
     private boolean isAjaxRequest(HttpServletRequest request) {
         return "XMLHttpRequest".equalsIgnoreCase(request.getHeader("X-Requested-With"));
     }
