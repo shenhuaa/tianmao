@@ -119,8 +119,6 @@ subprojects {
 		compileOnly('org.projectlombok:lombok')
 		compileOnly("javax.servlet:javax.servlet-api")
 		testCompile("org.springframework.boot:spring-boot-starter-test")
-		/*providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')*/
-		//runtime("org.springframework.boot:spring-boot-devtools")
 	}
 
 	dependencyManagement {

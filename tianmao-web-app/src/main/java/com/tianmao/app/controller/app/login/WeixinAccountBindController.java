@@ -3,10 +3,7 @@ package com.tianmao.app.controller.app.login;
 import com.tianmao.api.app.AccountBindClient;
 import com.tianmao.api.app.UserClient;
 import com.tianmao.api.app.VerificationCodeClient;
-import com.tianmao.app.sencode.SendCodeComponent;
-import com.tianmao.app.util.Rest;
-import com.tianmao.app.util.ValidateUtil;
-import com.tianmao.service.common.HttpCode;
+import com.tianmao.utils.HttpCode;
 import com.tianmao.service.model.user.AccountBind;
 import com.tianmao.service.model.user.User;
 import com.tianmao.service.type.VerificationCodeType;
@@ -17,6 +14,9 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.tianmao.sencode.SendCodeComponent;
+import com.tianmao.util.Rest;
+import com.tianmao.util.ValidateUtil;
 
 import java.util.Date;
 
@@ -31,7 +31,7 @@ import java.util.Date;
 public class WeixinAccountBindController {
 
     @Autowired
-    private  SendCodeComponent sendCodeComponent;
+    private SendCodeComponent sendCodeComponent;
     @Autowired
     private VerificationCodeClient verificationCodeClient;
     @Autowired

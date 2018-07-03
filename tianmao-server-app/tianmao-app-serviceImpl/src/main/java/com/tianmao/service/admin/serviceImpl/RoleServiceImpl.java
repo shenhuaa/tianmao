@@ -3,16 +3,17 @@ package com.tianmao.service.admin.serviceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.tianmao.service.admin.mapper.RoleMapper;
-import com.tianmao.service.common.HttpCode;
+import com.tianmao.utils.HttpCode;
 import com.tianmao.service.model.user.Permission;
 import com.tianmao.service.model.user.Role;
 import com.tianmao.service.admin.RoleService;
 import com.tianmao.service.admin.mapper.AdminWithRoleMapper;
 import com.tianmao.service.admin.mapper.PermissionWithRoleMapper;
-import com.tianmao.service.common.PagingAttribute;
+import com.tianmao.utils.PagingAttribute;
 import com.tianmao.service.dto.user.RoleDtoFilter;
 import com.tianmao.service.exception.BaseServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,7 +29,7 @@ import java.util.List;
  * @author roach
  * @date 2017/12/2
  */
-@RestController
+@Service
 public class RoleServiceImpl implements RoleService {
 
     @Autowired

@@ -1,7 +1,7 @@
 package com.tianmao.service.quartz.serviceImpl;
 
 import com.tianmao.service.quartz.base.ExecuteQuartzTask;
-import com.tianmao.service.common.HttpCode;
+import com.tianmao.utils.HttpCode;
 import com.tianmao.service.model.quartzs.QuartzTask;
 import com.tianmao.service.exception.BaseServiceException;
 import com.tianmao.service.quartz.JobService;

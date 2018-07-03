@@ -1,10 +1,10 @@
 package com.tianmao.app.controller.app.login;
-import com.tianmao.service.common.HttpCode;
-import com.tianmao.app.token.UserTokenManager;
-import com.tianmao.app.util.Rest;
+import com.tianmao.token.UserTokenManager;
+import com.tianmao.utils.HttpCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.tianmao.util.Rest;
 
 /**
  * 退出登陆控制器

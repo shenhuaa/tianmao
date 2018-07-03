@@ -1,16 +1,17 @@
 package com.tianmao.service.app.serviceImpl;
 
-import com.tianmao.service.common.HttpCode;
+import com.tianmao.utils.HttpCode;
 import com.tianmao.service.model.user.AccountBind;
 import com.tianmao.service.app.AccountBindService;
 import com.tianmao.service.type.user.AccountType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.tianmao.service.app.mapper.AccountBindMapper;
 import com.tianmao.service.exception.BaseServiceException;
 
-@RestController
+@Service
 public class AccountBindServiceImpl implements AccountBindService {
     @Autowired
     private AccountBindMapper accountBindMapper;

@@ -1,6 +1,6 @@
 package com.tianmao.service.exception;
 
-import com.tianmao.service.common.HttpCode;
+import com.tianmao.utils.HttpCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

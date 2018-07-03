@@ -2,8 +2,7 @@ package com.tianmao.app.controller.app.login;
 
 import com.tianmao.api.app.AccountBindClient;
 import com.tianmao.api.app.UserClient;
-import com.tianmao.app.util.Rest;
-import com.tianmao.service.common.HttpCode;
+import com.tianmao.utils.HttpCode;
 import com.tianmao.service.model.user.AccountBind;
 import com.tianmao.service.model.user.User;
 import com.tianmao.service.type.user.AccountType;
@@ -13,6 +12,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.tianmao.util.Rest;
 
 /**
  * 微信绑定

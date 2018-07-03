@@ -2,16 +2,16 @@ package com.tianmao.app.controller.app.user;
 
 import com.tianmao.api.app.UserClient;
 import com.tianmao.api.quartz.QuartzTaskClient;
-import com.tianmao.service.common.HttpCode;
+import com.tianmao.utils.HttpCode;
 import com.tianmao.service.constant.ModuleConstant;
 import com.tianmao.service.type.quartz.TaskStatus;
-import com.tianmao.app.util.Rest;
 import com.tianmao.app.api.ApiMallGroup;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.tianmao.service.model.user.User;
+import com.tianmao.util.Rest;
 
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class UserController {
     @ApiResponses({
             @ApiResponse(code = 200, message = "请求成功")
     })
-    @RequestMapping("/exception")
+    @RequestMapping("/com/tianmao/exception")
     public Rest commonList() {
         Rest.Builder rest = Rest.newBuilder();
         userClient.getException();
@@ -66,7 +66,7 @@ public class UserController {
      * 获取定时器数据
      * @return
      */
-    @RequestMapping("/common/quartz")
+    @RequestMapping("/com/tianmao/common/quartz")
     public Rest quartz() {
         Rest.Builder rest = Rest.newBuilder();
         int i  = quartzTaskClient.totalByModule(ModuleConstant.WEB_APP, TaskStatus.RUNNING);

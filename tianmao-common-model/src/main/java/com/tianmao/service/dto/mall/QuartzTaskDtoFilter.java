@@ -1,6 +1,6 @@
 package com.tianmao.service.dto.mall;
 
-import com.tianmao.service.common.PagingAttribute;
+import com.tianmao.utils.PagingAttribute;
 import com.tianmao.service.model.quartzs.QuartzTask;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

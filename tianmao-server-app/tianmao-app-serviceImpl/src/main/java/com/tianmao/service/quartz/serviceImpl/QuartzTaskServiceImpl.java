@@ -1,8 +1,8 @@
 package com.tianmao.service.quartz.serviceImpl;
 
 import com.github.pagehelper.PageHelper;
-import com.tianmao.service.common.HttpCode;
-import com.tianmao.service.common.PagingAttribute;
+import com.tianmao.utils.HttpCode;
+import com.tianmao.utils.PagingAttribute;
 import com.tianmao.service.dto.mall.QuartzTaskDtoFilter;
 import com.tianmao.service.model.quartzs.QuartzTask;
 import com.tianmao.service.quartz.mapper.QuartzTaskMapper;

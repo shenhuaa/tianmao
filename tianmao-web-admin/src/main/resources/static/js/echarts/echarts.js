@@ -1051,7 +1051,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        else if (opt.flush !== false && env.browser.weChat) {
 	            // In WeChat embeded browser, `requestAnimationFrame` and `setInterval`
 	            // hang when sliding page (on touch event), which cause that zr does not
-	            // refresh util user interaction finished, which is not expected.
+	            // refresh com.tianmao.util user interaction finished, which is not expected.
 	            // But `dispatchAction` may be called too frequently when pan on touch
 	            // screen, which impacts performance if do not throttle them.
 	            this._throttledZrFlush();
@@ -1805,7 +1805,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Layout is a special stage of visual encoding
-	     * Most visual encoding like color are common for different chart
+	     * Most visual encoding like color are com.tianmao.common for different chart
 	     * But each chart has it's own layout algorithm
 	     *
 	     * @param {number} [priority=1000]
@@ -3016,7 +3016,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var _ctx;
 	    function getContext() {
 	        if (!_ctx) {
-	            // Use util.createCanvas instead of createCanvas
+	            // Use com.tianmao.util.createCanvas instead of createCanvas
 	            // because createCanvas may be overwritten in different environment
 	            _ctx = util.createCanvas().getContext('2d');
 	        }
@@ -4162,7 +4162,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        // Avoid accuracy problem in edge, such as
 	        // 146.39 - 62.83 === 83.55999999999999.
-	        // See echarts/test/ut/spec/util/number.js#linearMap#accuracyError
+	        // See echarts/test/ut/spec/com.tianmao.util/number.js#linearMap#accuracyError
 	        // It is a little verbose for efficiency considering this method
 	        // is a hotspot.
 	        if (clamp) {
@@ -7046,7 +7046,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * convertFromPixel:
 	     *     These two methods is also responsible for determine whether this
 	     *     coodinate system is applicable to the given `finder`.
-	     *     Each coordinate system will be tried, util one returns none
+	     *     Each coordinate system will be tried, com.tianmao.util one returns none
 	     *     null/undefined value.
 	     *     @param {module:echarts/model/Global} ecModel
 	     *     @param {Object} finder
@@ -10012,15 +10012,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * 动画主控制器
-	 * @config target 动画对象，可以是数组，如果是数组的话会批量分发onframe等事件
-	 * @config life(1000) 动画时长
-	 * @config delay(0) 动画延迟时间
-	 * @config loop(true)
-	 * @config gap(0) 循环的间隔时间
-	 * @config onframe
-	 * @config easing(optional)
-	 * @config ondestroy(optional)
-	 * @config onrestart(optional)
+	 * @com.tianmao.config target 动画对象，可以是数组，如果是数组的话会批量分发onframe等事件
+	 * @com.tianmao.config life(1000) 动画时长
+	 * @com.tianmao.config delay(0) 动画延迟时间
+	 * @com.tianmao.config loop(true)
+	 * @com.tianmao.config gap(0) 循环的间隔时间
+	 * @com.tianmao.config onframe
+	 * @com.tianmao.config easing(optional)
+	 * @com.tianmao.config ondestroy(optional)
+	 * @com.tianmao.config onrestart(optional)
 	 *
 	 * TODO pause
 	 */
@@ -11002,7 +11002,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * config默认配置项
-	     * @exports zrender/config
+	     * @exports zrender/com.tianmao.config
 	     * @author Kener (@Kener-林峰, kener.linfeng@gmail.com)
 	     */
 	    var config = {
@@ -12481,8 +12481,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param {string} props.type Path type
 	     * @param {Function} props.init Initialize
 	     * @param {Function} props.buildPath Overwrite buildPath method
-	     * @param {Object} [props.style] Extended default style config
-	     * @param {Object} [props.shape] Extended default shape config
+	     * @param {Object} [props.style] Extended default style com.tianmao.config
+	     * @param {Object} [props.shape] Extended default shape com.tianmao.config
 	     */
 	    Path.extend = function (defaults) {
 	        var Sub = function (opts) {
@@ -16166,7 +16166,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        brush: (env.browser.ie && env.browser.version >= 11) // version: '11.0'
 	            // Fix weird bug in some version of IE11 (like 11.0.9600.17801),
-	            // where exception "unexpected call to method or property access"
+	            // where com.tianmao.exception "unexpected call to method or property access"
 	            // might be thrown when calling ctx.fill after a path whose area size
 	            // is zero is drawn and ctx.clip() is called and shadowBlur is set.
 	            // (e.g.,
@@ -16378,7 +16378,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * @alias module:zrender/shape/util/smoothSpline
+	     * @alias module:zrender/shape/com.tianmao.util/smoothSpline
 	     * @param {Array} points 线段顶点数组
 	     * @param {boolean} isLoop
 	     * @return {Array}
@@ -16450,7 +16450,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * 贝塞尔平滑曲线
-	     * @alias module:zrender/shape/util/smoothBezier
+	     * @alias module:zrender/shape/com.tianmao.util/smoothBezier
 	     * @param {Array} points 线段顶点数组
 	     * @param {number} smooth 平滑等级, 0-1
 	     * @param {boolean} isLoop
@@ -24451,7 +24451,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this._seriesModel = seriesModel;
 	    };
 
-	    // Update common properties
+	    // Update com.tianmao.common properties
 	    var normalStyleAccessPath = ['itemStyle', 'normal'];
 	    var emphasisStyleAccessPath = ['itemStyle', 'emphasis'];
 	    var normalLabelAccessPath = ['label', 'normal'];
@@ -30338,7 +30338,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }, seriesModel, idx);
 	        }
 
-	        // Update common style
+	        // Update com.tianmao.common style
 	        var itemStyleModel = itemModel.getModel('itemStyle');
 	        var visualColor = data.getItemVisual(idx, 'color');
 
@@ -33937,7 +33937,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	
 
-	    // var zrUtil = require('zrender/lib/core/util');
+	    // var zrUtil = require('zrender/lib/core/com.tianmao.util');
 	    var graphic = __webpack_require__(43);
 
 	    var MapDraw = __webpack_require__(176);
@@ -42198,7 +42198,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }, seriesModel, idx);
 	        }
 
-	        // Update common style
+	        // Update com.tianmao.common style
 	        var itemStyleModel = itemModel.getModel('itemStyle');
 	        var visualColor = data.getItemVisual(idx, 'color');
 
@@ -45111,7 +45111,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Init a graph data structure from data in option series
 	         *
-	         * @param  {Object} option  the object used to config echarts view
+	         * @param  {Object} option  the object used to com.tianmao.config echarts view
 	         * @return {module:echarts/data/List} storage initial data
 	         */
 	        getInitialData: function (option) {
@@ -46448,7 +46448,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    zrUtil.mixin(BoxplotView, whiskerBoxCommon.viewMixin, true);
 
-	    // Update common properties
+	    // Update com.tianmao.common properties
 	    var normalStyleAccessPath = ['itemStyle', 'normal'];
 	    var emphasisStyleAccessPath = ['itemStyle', 'emphasis'];
 
@@ -46856,7 +46856,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    zrUtil.mixin(CandlestickView, whiskerBoxCommon.viewMixin, true);
 
-	    // Update common properties
+	    // Update com.tianmao.common properties
 	    var normalStyleAccessPath = ['itemStyle', 'normal'];
 	    var emphasisStyleAccessPath = ['itemStyle', 'emphasis'];
 
@@ -47140,7 +47140,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // When to show the effect, option: 'render'|'emphasis'
 	            showEffectOn: 'render',
 
-	            // Ripple effect config
+	            // Ripple effect com.tianmao.config
 	            rippleEffect: {
 	                period: 4,
 	                // Scale of ripple
@@ -47411,7 +47411,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this._effectCfg = effectCfg;
 	        }
 	        else {
-	            // Not keep old effect config
+	            // Not keep old effect com.tianmao.config
 	            this._effectCfg = null;
 
 	            this.stopEffectAnimation();
@@ -50513,7 +50513,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            dimensions = [
 	                {
 	                    name: 'time',
-	                    // FIXME common?
+	                    // FIXME com.tianmao.common?
 	                    type: axisType === 'category'
 	                        ? 'ordinal'
 	                        : axisType === 'time'
@@ -54166,7 +54166,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * Set common axis properties
+	     * Set com.tianmao.common axis properties
 	     * @param {module:echarts/coord/polar/AngleAxis|module:echarts/coord/polar/RadiusAxis}
 	     * @param {module:echarts/coord/polar/AxisModel}
 	     * @inner
@@ -59773,7 +59773,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                    // See echarts/component/visualMap/typeDefaulter.
 	            range: null,            // selected range. In default case `range` is [min, max]
 	                                    // and can auto change along with modification of min max,
-	                                    // util use specifid a range.
+	                                    // com.tianmao.util use specifid a range.
 	            realtime: true,         // Whether realtime update.
 	            itemHeight: null,       // The length of the range control edge.
 	            itemWidth: null,        // The length of the other side.
@@ -60360,7 +60360,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 
 	                // Compatible with previous logic, always give a defautl color, otherwise
-	                // simple config with no inRange and outOfRange will not work.
+	                // simple com.tianmao.config with no inRange and outOfRange will not work.
 	                // Originally we use visualMap.color as the default color, but setOption at
 	                // the second time the default color will be erased. So we change to use
 	                // constant DEFAULT_COLOR.
@@ -60505,7 +60505,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * FIXME
 	         * Do not publish to thirt-part-dev temporarily
-	         * util the interface is stable. (Should it return
+	         * com.tianmao.util the interface is stable. (Should it return
 	         * a function but not visual meta?)
 	         *
 	         * @pubilc
@@ -65094,8 +65094,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 
-	    // var zrUtil = require('zrender/lib/core/util');
-	    // var graphic = require('../../util/graphic');
+	    // var zrUtil = require('zrender/lib/core/com.tianmao.util');
+	    // var graphic = require('../../com.tianmao.util/graphic');
 	    var ComponentView = __webpack_require__(29);
 
 	    module.exports = ComponentView.extend({

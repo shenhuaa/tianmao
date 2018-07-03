@@ -4,19 +4,19 @@ jar {
 
 dependencies {
     compile project(':tianmao-redis')
+    compile project(':tianmao-web-common')
     compile project(':tianmao-application-config')
     compile project(':tianmao-server-app:tianmao-app-service')
     compile project(':tianmao-server-app:tianmao-app-api')
     compile("commons-io:commons-io:${commonsIoVersion}")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.cloud:spring-cloud-starter-eureka")
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-websocket")
-    compile("org.springframework.boot:spring-boot-starter-freemarker")
-    compile("com.netflix.feign:feign-okhttp:${feignOkhttVersion}")
-    compile("cn.jpush.api:jpush-client:${jpushClientVersion}")
     compile("eu.bitwalker:UserAgentUtils:${userAgentUtilsVersion}")
     compile("net.coobird:thumbnailator:${thumbnailatorVersion}")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.session:spring-session-data-redis")
+    compile("org.springframework.boot:spring-boot-starter-freemarker")
+    compile("com.netflix.feign:feign-okhttp:${feignOkhttVersion}")
+    compile("org.springframework.cloud:spring-cloud-starter-eureka")
+    compile group: 'org.apache.poi', name: 'poi', version: '3.10-FINAL'
     /*compile("org.apache.poi:poi:${poiVersion}")
     compile("org.apache.poi:poi-ooxml:${poiVersion}")*/
 }

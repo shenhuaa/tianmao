@@ -1,25 +1,25 @@
 /*
 package tianmao.web.app.controller.app.pay;
 
-import com.alipay.api.internal.util.AlipaySignature;
+import com.alipay.api.internal.com.tianmao.util.AlipaySignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.util.StringUtils;
+import org.springframework.com.tianmao.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tianmao.common.BigDecimalUtil;
+import tianmao.com.tianmao.common.BigDecimalUtil;
 import tianmao.type.mall.MallOrderStatus;
-import tianmao.web.app.config.ChatAlipayConfig;
-import tianmao.web.app.util.Rest;
+import tianmao.web.app.com.tianmao.config.ChatAlipayConfig;
+import tianmao.web.app.com.tianmao.util.Rest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
+import java.com.tianmao.util.Enumeration;
+import java.com.tianmao.util.HashMap;
+import java.com.tianmao.util.Map;
 
 */
 /**
@@ -35,7 +35,7 @@ public class MallAlipayNotifyController {
 
     private static final Logger logger = LoggerFactory.getLogger(MallAlipayNotifyController.class);
     @Autowired
-    private ChatAlipayConfig config;
+    private ChatAlipayConfig com.tianmao.config;
 
     @Autowired
     private MallOrderService mallOrderService;
@@ -100,7 +100,7 @@ public class MallAlipayNotifyController {
             }
 
             //签名认证
-            boolean checkSign = AlipaySignature.rsaCheckV1(params, config.getAlipayPublicKey(), config.getCharset(), config.getSignType());
+            boolean checkSign = AlipaySignature.rsaCheckV1(params, com.tianmao.config.getAlipayPublicKey(), com.tianmao.config.getCharset(), com.tianmao.config.getSignType());
             if (!checkSign) {
                 logger.warn("支付宝订单[{}]签名失败，无法完成交易!", out_trade_no);
                 return "fail";

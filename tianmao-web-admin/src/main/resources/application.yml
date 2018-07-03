@@ -9,9 +9,9 @@ server:
 spring:
   application:
     name: ${web.admin.name}
+  #如果不用sessionredis那么就开启关闭掉 session.store-type : none
   resources:
     add-mappings: false
-
 
 #日志保存路径
 logging:

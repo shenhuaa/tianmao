@@ -2,9 +2,6 @@ package com.tianmao.service.app.controller;
 
 import com.tianmao.api.app.VerificationCodeClient;
 import com.tianmao.service.app.VerificationCodeService;
-import com.tianmao.service.app.mapper.VerificationCodeMapper;
-import com.tianmao.service.common.HttpCode;
-import com.tianmao.service.exception.BaseServiceException;
 import com.tianmao.service.model.sencode.VerificationCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,6 +1,6 @@
 package com.tianmao.service.exception;
 
-import com.tianmao.service.common.HttpCode;
+import com.tianmao.utils.HttpCode;
 import lombok.Builder;
 import lombok.Data;
 

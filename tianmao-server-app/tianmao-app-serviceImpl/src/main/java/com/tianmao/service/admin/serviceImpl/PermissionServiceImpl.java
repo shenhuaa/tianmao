@@ -1,6 +1,7 @@
 package com.tianmao.service.admin.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +16,7 @@ import java.util.Set;
 /**
  * Created by roach on 17/6/5.
  */
-@RestController
+@Service
 public class PermissionServiceImpl implements PermissionService {
 
     @Autowired

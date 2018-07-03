@@ -1,12 +1,12 @@
 package com.tianmao.app.controller.app.login;
 
-import com.tianmao.service.common.HttpCode;
-import com.tianmao.app.util.Rest;
+import com.tianmao.token.UserTokenManager;
+import com.tianmao.utils.HttpCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import com.tianmao.service.model.user.User;
-import com.tianmao.app.token.UserTokenManager;
+import com.tianmao.util.Rest;
 
 /**
  * 用户登陆

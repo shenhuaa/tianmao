@@ -3,18 +3,19 @@ package com.tianmao.service.admin.serviceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.tianmao.service.admin.mapper.AdminWithRoleMapper;
-import com.tianmao.service.common.HttpCode;
+import com.tianmao.utils.HttpCode;
 import com.tianmao.service.dto.user.AdminDtoFilter;
 import com.tianmao.service.model.user.Admin;
 import com.tianmao.service.admin.AdminService;
-import com.tianmao.service.common.Sha512HashPasswordUtil;
+import com.tianmao.utils.Sha512HashPasswordUtil;
 import com.tianmao.service.type.user.UserStatus;
 import org.apache.shiro.util.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.tianmao.service.admin.mapper.AdminMapper;
-import com.tianmao.service.common.PagingAttribute;
+import com.tianmao.utils.PagingAttribute;
 import com.tianmao.service.exception.BaseServiceException;
 
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.List;
  * @author roach
  * @date 2017/12/2
  */
-@RestController
+@Service
 public class AdminServiceImpl implements AdminService {
 
     @Autowired

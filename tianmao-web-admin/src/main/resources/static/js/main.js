@@ -403,7 +403,7 @@ var UploadInit = function (id, type, exts, limit) {
             showUploadedPercent: true,
             showUploadedSize: true,
             removeTimeout: 9999999,
-            uploader: adminUrl + '/common/fileUpload',
+            uploader: adminUrl + '/com.tianmao.common/fileUpload',
             onUploadStart: function () {
                 file.Huploadify('settings', 'formData', {
                     fileType: type
@@ -415,7 +415,7 @@ var UploadInit = function (id, type, exts, limit) {
                     lastModifiedDate: file.lastModifiedDate.getTime()
                 };
                 $.ajax({
-                    url: adminUrl + '/common/updateUploadedStatus',
+                    url: adminUrl + '/com.tianmao.common/updateUploadedStatus',
                     data: data,
                     async: false,
                     type: 'POST',
@@ -433,7 +433,7 @@ var UploadInit = function (id, type, exts, limit) {
                     fileName: file.name,
                     lastModifiedDate: file.lastModifiedDate.getTime()
                 };
-                var url = adminUrl + '/common/getUploadedSize';
+                var url = adminUrl + '/com.tianmao.common/getUploadedSize';
                 var uploadedSize = 0;
                 $.ajax({
                     url: url,

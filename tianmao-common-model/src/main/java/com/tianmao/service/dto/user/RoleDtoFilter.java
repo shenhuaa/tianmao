@@ -2,7 +2,7 @@ package com.tianmao.service.dto.user;
 
 import com.tianmao.service.model.user.Role;
 import lombok.Data;
-import com.tianmao.service.common.PagingAttribute;
+import com.tianmao.utils.PagingAttribute;
 
 /**
  * 角色搜索过滤

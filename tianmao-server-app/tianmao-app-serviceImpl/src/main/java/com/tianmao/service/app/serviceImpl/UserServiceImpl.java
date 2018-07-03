@@ -1,8 +1,8 @@
 package com.tianmao.service.app.serviceImpl;
 
-import com.github.pagehelper.PageInfo;
-import com.tianmao.service.common.HttpCode;
+import com.tianmao.utils.HttpCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.tianmao.service.app.mapper.UserMapper;
@@ -12,7 +12,7 @@ import com.tianmao.service.exception.BaseServiceException;
 
 import java.util.List;
 
-@RestController
+@Service
 public class UserServiceImpl implements UserService {
 
 

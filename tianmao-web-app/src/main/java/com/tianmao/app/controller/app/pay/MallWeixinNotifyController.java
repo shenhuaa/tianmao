@@ -7,18 +7,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
+import org.springframework.com.tianmao.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import tianmao.common.BigDecimalUtil;
+import tianmao.com.tianmao.common.BigDecimalUtil;
 import tianmao.type.mall.MallOrderStatus;
-import tianmao.web.app.config.WxChatpayConfig;
+import tianmao.web.app.com.tianmao.config.WxChatpayConfig;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.Map;
+import java.com.tianmao.util.Map;
 
 */
 /**
@@ -34,7 +34,7 @@ public class MallWeixinNotifyController {
 
     private static final Logger logger = LoggerFactory.getLogger(MallWeixinNotifyController.class);
     @Autowired
-    private WxChatpayConfig config;
+    private WxChatpayConfig com.tianmao.config;
 
     @Autowired
     private MallOrderService mallOrderService;
@@ -57,7 +57,7 @@ public class MallWeixinNotifyController {
             Map<String, String> dataMap = WXPayUtil.xmlToMap(resultData);
             String resultCode = dataMap.get("result_code");
             logger.debug("微信支付异步通知信息:[{}]", dataMap);
-            boolean heckSign = WXPayUtil.isSignatureValid(dataMap, config.getKey(), config.getSignType());
+            boolean heckSign = WXPayUtil.isSignatureValid(dataMap, com.tianmao.config.getKey(), com.tianmao.config.getSignType());
             if (!heckSign) {
                 logger.warn("微信签名失败[{}]", dataMap);
                 return WeixinUtil.fail();

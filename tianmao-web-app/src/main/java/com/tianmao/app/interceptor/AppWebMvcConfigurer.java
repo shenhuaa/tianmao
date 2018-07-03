@@ -1,5 +1,6 @@
 package com.tianmao.app.interceptor;
 
+import com.tianmao.interceptor.WebMvcSupportConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
@@ -39,7 +40,7 @@ public class AppWebMvcConfigurer extends WebMvcSupportConfigurer {
      */
     public static String[] excludePathRelease() {
         return new String[]{
-                "/user/common",
+                "/user/com.tianmao.common",
                 "/error",
                 "/404",
                 "/swagger-resources/**", //接口文档放行

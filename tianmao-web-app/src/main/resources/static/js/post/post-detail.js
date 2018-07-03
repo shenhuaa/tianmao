@@ -2,7 +2,7 @@ var androidStore;
 var iosStore;
 $(function(){
     $.ajax({
-       url: appUrl + "/common/getGeneralPostDetail",
+       url: appUrl + "/com.tianmao.common/getGeneralPostDetail",
        data: "postId="+postId,
        success: function(res){
 //                    console.log(res)

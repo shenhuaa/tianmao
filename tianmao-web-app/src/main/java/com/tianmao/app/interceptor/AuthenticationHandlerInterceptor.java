@@ -1,18 +1,18 @@
 package com.tianmao.app.interceptor;
 
 import com.alibaba.fastjson.JSONObject;
-import com.tianmao.service.common.HttpCode;
-import com.tianmao.app.config.AppContext;
-import com.tianmao.app.util.Rest;
-import com.tianmao.app.constant.IConstants;
-import com.tianmao.app.token.UserTokenManager;
-import com.tianmao.app.util.APIParamUtil;
+import com.tianmao.token.UserTokenManager;
+import com.tianmao.utils.HttpCode;
+import com.tianmao.config.AppContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import com.tianmao.util.APIParamUtil;
+import com.tianmao.util.IConstants;
+import com.tianmao.util.Rest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

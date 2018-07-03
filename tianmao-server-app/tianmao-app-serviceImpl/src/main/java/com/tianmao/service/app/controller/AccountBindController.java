@@ -2,9 +2,6 @@ package com.tianmao.service.app.controller;
 
 import com.tianmao.api.app.AccountBindClient;
 import com.tianmao.service.app.AccountBindService;
-import com.tianmao.service.app.mapper.AccountBindMapper;
-import com.tianmao.service.common.HttpCode;
-import com.tianmao.service.exception.BaseServiceException;
 import com.tianmao.service.model.user.AccountBind;
 import com.tianmao.service.type.user.AccountType;
 import org.springframework.beans.factory.annotation.Autowired;

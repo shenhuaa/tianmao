@@ -42,7 +42,7 @@
 
     <!--启动优化-->
     <logger name="org.springframework.jmx.export.annotation.AnnotationMBeanExporter" level="WARN"/>
-    <logger name="com.netflix.config.sources.URLConfigurationSource" level="WARN"/>
+    <logger name="com.netflix.com.tianmao.config.sources.URLConfigurationSource" level="WARN"/>
     <logger name="com.netflix.discovery.provider.DiscoveryJerseyProvider" level="WARN"/>
     <logger name="com.netflix.discovery.DiscoveryClient" level="WARN"/>
     <logger name="org.springframework.context.support.PostProcessorRegistrationDelegate" level="WARN"/>

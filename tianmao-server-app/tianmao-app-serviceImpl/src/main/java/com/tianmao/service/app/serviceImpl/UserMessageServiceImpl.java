@@ -5,13 +5,14 @@ import com.tianmao.service.app.UserMessageService;
 import com.tianmao.service.app.mapper.UserMapper;
 import com.tianmao.service.model.user.UserMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Service
 public class UserMessageServiceImpl implements UserMessageService {
 
     @Autowired

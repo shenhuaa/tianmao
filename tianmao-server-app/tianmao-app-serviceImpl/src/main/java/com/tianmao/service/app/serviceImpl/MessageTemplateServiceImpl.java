@@ -8,6 +8,7 @@ import com.tianmao.service.dto.user.MessageContentDto;
 import com.tianmao.service.model.user.MessageTemplate;
 import com.tianmao.service.type.user.MessageTemplateType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +24,7 @@ import java.util.List;
  * @author roach
  * @date 2018/1/6
  */
-@RestController
+@Service
 public class MessageTemplateServiceImpl implements MessageTemplateService {
 
     @Autowired

@@ -1,7 +1,6 @@
 jar {
     baseName = 'cloud-eureka'
 }
-
 dependencies {
     compile project(':tianmao-application-config')
     compile("org.springframework.cloud:spring-cloud-starter-eureka-server") {

@@ -1,6 +1,6 @@
 package com.tianmao.service.dto.user;
 
-import com.tianmao.service.common.PagingAttribute;
+import com.tianmao.utils.PagingAttribute;
 import com.tianmao.service.model.user.Admin;
 import lombok.Data;
 

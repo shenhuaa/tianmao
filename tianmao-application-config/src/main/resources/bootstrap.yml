@@ -2,6 +2,8 @@
 spring:
   profiles:
     active: dev
+  messages:
+    basename: i18n/messages
 
  #文件上传大小
   http:

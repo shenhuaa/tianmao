@@ -107,7 +107,7 @@ Date.now = Date.now || function() { return +new Date; };
         	/*if($("#kdetails").length > 0){
         		alert(1);
 	        	KindEditor.create('#kdetails', {
-	    			uploadJson : home+'/common/imgUpload?fileType=img/activity',
+	    			uploadJson : home+'/com.tianmao.common/imgUpload?fileType=img/activity',
 	    			allowFileManager : true,
 	    			afterBlur: function(){this.sync();}			
 	    		});

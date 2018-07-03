@@ -3,6 +3,7 @@ jar {
 }
 dependencies {
     compile project(':tianmao-redis')
+    compile project(':tianmao-web-common')
     compile project(':tianmao-application-config')
     compile project(':tianmao-server-app:tianmao-app-service')
     compile project(':tianmao-server-app:tianmao-app-api')

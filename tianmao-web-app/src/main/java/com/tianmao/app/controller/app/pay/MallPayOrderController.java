@@ -2,7 +2,7 @@
 package tianmao.web.app.controller.app.pay;
 
 import com.alipay.api.AlipayApiException;
-import com.alipay.api.internal.util.AlipaySignature;
+import com.alipay.api.internal.com.tianmao.util.AlipaySignature;
 import com.github.wxpay.sdk.WXPay;
 import com.github.wxpay.sdk.WXPayConstants;
 import com.github.wxpay.sdk.WXPayUtil;
@@ -13,24 +13,24 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tianmao.common.BigDecimalUtil;
-import tianmao.common.DateUtil;
-import tianmao.common.HttpCode;
-import tianmao.common.RemoteClientIpUtil;
+import tianmao.com.tianmao.common.BigDecimalUtil;
+import tianmao.com.tianmao.common.DateUtil;
+import tianmao.com.tianmao.common.HttpCode;
+import tianmao.com.tianmao.common.RemoteClientIpUtil;
 import tianmao.service.app.UserService;
-import tianmao.service.exception.BaseServiceException;
+import tianmao.service.com.tianmao.exception.BaseServiceException;
 import tianmao.type.mall.MallOrderStatus;
-import tianmao.web.app.config.ChatAlipayConfig;
-import tianmao.web.app.config.WxChatpayConfig;
-import tianmao.web.app.util.Rest;
-import tianmao.web.app.util.UUIDUtil;
+import tianmao.web.app.com.tianmao.config.ChatAlipayConfig;
+import tianmao.web.app.com.tianmao.config.WxChatpayConfig;
+import tianmao.web.app.com.tianmao.util.Rest;
+import tianmao.web.app.com.tianmao.util.UUIDUtil;
 
 import java.math.BigDecimal;
 import java.net.URLEncoder;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.com.tianmao.util.Date;
+import java.com.tianmao.util.HashMap;
+import java.com.tianmao.util.Map;
+import java.com.tianmao.util.TreeMap;
 
 */
 /**

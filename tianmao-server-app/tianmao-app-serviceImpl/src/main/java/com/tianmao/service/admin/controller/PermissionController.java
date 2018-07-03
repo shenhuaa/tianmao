@@ -1,7 +1,9 @@
 package com.tianmao.service.admin.controller;
 import com.tianmao.api.admin.PermissionClient;
 import com.tianmao.service.admin.PermissionService;
+import com.tianmao.service.model.user.Permission;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -14,7 +16,7 @@ public class PermissionController implements PermissionClient {
     @Autowired
     private PermissionService permissionService;
     @Override
-    public List<com.tianmao.service.model.user.Permission> getListByUid(Long uid) {
+    public List<Permission> getListByUid(Long uid) {
         return permissionService.getListByUid(uid);
     }
 
@@ -24,47 +26,47 @@ public class PermissionController implements PermissionClient {
     }
 
     @Override
-    public List<com.tianmao.service.model.user.Permission> getList() {
+    public List<Permission> getList() {
         return permissionService.getList();
     }
 
     @Override
-    public List<com.tianmao.service.model.user.Permission> getListByRoleId(Long roleId) {
+    public List<Permission> getListByRoleId(Long roleId) {
         return permissionService.getListByRoleId(roleId);
     }
 
     @Override
     public com.tianmao.service.model.user.Permission getPermissionById(Long id) {
-        return null;
+        return permissionService.getPermissionById(id);
     }
 
     @Override
-    public boolean save(com.tianmao.service.model.user.Permission permission) {
-        return false;
+    public boolean save(@RequestBody Permission permission) {
+        return permissionService.save(permission);
     }
 
     @Override
     public Set<String> getPermissionMarksByAdminId(Long adminId) {
-        return null;
+        return permissionService.getPermissionMarksByAdminId(adminId);
     }
 
     @Override
-    public List<com.tianmao.service.model.user.Permission> getAllPermissions() {
-        return null;
+    public List<Permission> getAllPermissions() {
+        return permissionService.getAllPermissions();
     }
 
     @Override
     public List<Long> getPermissionIds(Long roleId) {
-        return null;
+        return permissionService.getPermissionIds(roleId);
     }
 
     @Override
     public boolean checkPermission(Long adminId, String permission) {
-        return false;
+        return permissionService.checkPermission(adminId,permission);
     }
 
     @Override
     public List<Long> getListByMenuId(Long menuId) {
-        return null;
+        return permissionService.getListByMenuId(menuId);
     }
 }

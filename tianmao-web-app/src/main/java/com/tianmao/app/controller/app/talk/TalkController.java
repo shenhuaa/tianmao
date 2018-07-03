@@ -1,16 +1,16 @@
 package com.tianmao.app.controller.app.talk;
 
-import com.tianmao.service.common.HttpCode;
-import com.tianmao.app.util.Rest;
+import com.tianmao.utils.HttpCode;
 import com.tianmao.service.type.user.MessageTemplateType;
-import com.tianmao.app.config.AppContext;
-import com.tianmao.app.controller.app.common.MessageComponent;
-import com.tianmao.app.util.upload.FileUploadUtil;
+import com.tianmao.common.MessageComponent;
+import com.tianmao.config.AppContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import com.tianmao.util.FileUploadUtil;
+import com.tianmao.util.Rest;
 
 @RestController
 @RequestMapping("talk")

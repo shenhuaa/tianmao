@@ -162,7 +162,7 @@
     </div>
 </div>
 
-    <#include "common/body.ftl" />
-    <#include "common/footer.ftl" />-->
+    <#include "com.tianmao.common/body.ftl" />
+    <#include "com.tianmao.common/footer.ftl" />-->
 </body>
 </html>

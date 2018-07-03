@@ -103,7 +103,7 @@ $().ready(function() {
 	var nums = 60;
 	$(".takey").click(function() {
 		$.ajax({
-			url : home+ 'common/sendSms',
+			url : home+ 'com.tianmao.common/sendSms',
 			method : 'get',
 			data : {
 				mobile : $("#Account").val(),
@@ -149,7 +149,7 @@ $().ready(function() {
 		
 		if(!agree && tAccount=="" && tVerfication=="" && tPassword=="" && tPasswordS==""){
 			$.ajax({
-				url : home+ 'common/register',
+				url : home+ 'com.tianmao.common/register',
 				method : 'post',
 				data : {
 					mobile : $("#Account").val(),

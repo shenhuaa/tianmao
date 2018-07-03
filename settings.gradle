@@ -9,4 +9,5 @@ include 'tianmao-web-app'
 include 'tianmao-mybatis'
 include 'tianmao-redis'
 include 'tianmao-web-admin'
+include 'tianmao-web-common'
 

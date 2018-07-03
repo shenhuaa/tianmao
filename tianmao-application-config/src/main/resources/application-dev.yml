@@ -91,6 +91,6 @@ storage:
 logging:
   #日志保存路径
   dir: /web/logs/${logging.path}
-  config: classpath:logback-spring.xml
+  com.tianmao.config: classpath:logback-spring.xml
   level:
     root: info

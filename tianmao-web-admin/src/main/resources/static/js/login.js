@@ -18,6 +18,7 @@ $(function () {
                         if (response.code == 200) {
                             window.location.href = adminUrl;
                         } else {
+                            console.log(response.message)
                            alert(response.message)
                         }
                     })
