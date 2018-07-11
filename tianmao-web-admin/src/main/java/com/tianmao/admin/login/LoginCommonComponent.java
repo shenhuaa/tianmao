@@ -1,5 +1,6 @@
 package com.tianmao.admin.login;
 
+import com.tianmao.app.util.Rest;
 import com.tianmao.utils.HttpCode;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.DisabledAccountException;
@@ -11,8 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.tianmao.util.Rest;
-
 /**
  * @author roach
  * @date 2018/03/30

@@ -2,10 +2,8 @@ package com.tianmao.service.app.controller;
 
 import com.tianmao.api.app.UserClient;
 import com.tianmao.service.app.UserService;
-import com.tianmao.service.app.mapper.UserMapper;
-import com.tianmao.service.common.BaseService;
+import com.tianmao.service.common.serviceImpl.BaseServiceImpl;
 import com.tianmao.service.model.user.User;
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class UserController implements UserClient {
+public class UserController  implements UserClient  {
 
     @Autowired
     private UserService userService;
@@ -21,7 +19,7 @@ public class UserController implements UserClient {
 
     @Override
     public List<User> selectList() {
-        return userService.selectList();
+        return userService.selectAll(new User());
     }
 
     @Override

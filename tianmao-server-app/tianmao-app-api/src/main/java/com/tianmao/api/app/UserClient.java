@@ -8,16 +8,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @FeignClient(name = "${server.app.name}")
-public interface UserClient {
+public interface UserClient  {
 
     @RequestMapping(value = "/user/selectList")
     List<User> selectList();
 
     /**
      * 根据用户名获取用户
-     *
-     * @param username
-     * @return
      */
     @RequestMapping(value = "/user/username")
     User getUserByUsername(@RequestParam("username") String username);

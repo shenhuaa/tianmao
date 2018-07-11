@@ -21,7 +21,7 @@ subprojects {
 	apply plugin: 'idea'
 	apply plugin: 'org.springframework.boot'
 
-	group = 'cn.tianmao'
+	group = 'com.tianmao'
 	//version = '0.0.1-SNAPSHOT'
 	sourceCompatibility = 1.8
 

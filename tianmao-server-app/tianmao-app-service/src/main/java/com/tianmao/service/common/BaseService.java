@@ -10,9 +10,7 @@ import java.util.List;
  */
 public interface BaseService<ID, T> {
 
-    T insert(T t);
-
-    T updateByPrimaryKey(T t);
+    T insertSelective(T t);
 
     T updateByPrimaryKeySelective(T t);
 

@@ -17,6 +17,4 @@ dependencies {
     compile("com.netflix.feign:feign-okhttp:${feignOkhttVersion}")
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
     compile group: 'org.apache.poi', name: 'poi', version: '3.10-FINAL'
-    /*compile("org.apache.poi:poi:${poiVersion}")
-    compile("org.apache.poi:poi-ooxml:${poiVersion}")*/
 }

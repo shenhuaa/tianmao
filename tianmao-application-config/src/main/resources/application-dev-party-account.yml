@@ -11,4 +11,17 @@ jpush:
   appkey: 666
   secret: 111
   apns: false
+#===========邮件配置===========================================================================================#
+spring:
+  mail:
+    name: 爱士多
+    subject: 爱士多验证码
+    host: smtp.163.com
+    port: 465
+    username: qq171375063@163.com
+    password: shewoqishui520
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
 

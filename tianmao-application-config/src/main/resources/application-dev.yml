@@ -7,7 +7,7 @@ spring:
 web:
   #网站网址ip或域名
   domain: http://127.0.0.1
-  proxy-domain: http://huangliuhai.wicp.net
+  proxy-domain: http://w19r935245.iok.la
 
   app:
     port: 8081
@@ -17,7 +17,7 @@ web:
 
   admin:
       port: 8082
-      name: istore-web-admin
+      name: tianmao-web-admin
       logging: web-admin
       url: ${web.domain}:${web.admin.port}
 

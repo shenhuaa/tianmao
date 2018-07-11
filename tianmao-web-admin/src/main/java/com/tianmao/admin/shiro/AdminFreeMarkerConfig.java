@@ -1,7 +1,7 @@
 package com.tianmao.admin.shiro;
 
-import com.tianmao.admin.freemarker.FreeMarkerConfig;
 import com.tianmao.admin.tags.SidebarMenusTag;
+import com.tianmao.app.interceptor.FreeMarkerConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

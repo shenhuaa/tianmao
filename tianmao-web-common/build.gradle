@@ -23,4 +23,5 @@ dependencies {
     compile("eu.bitwalker:UserAgentUtils:${userAgentUtilsVersion}")
     compile("net.coobird:thumbnailator:${thumbnailatorVersion}")
     compile("org.springframework.session:spring-session-data-redis")
+    compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.1'
 }

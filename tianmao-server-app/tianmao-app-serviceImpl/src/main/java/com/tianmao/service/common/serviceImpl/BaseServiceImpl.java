@@ -3,7 +3,6 @@ package com.tianmao.service.common.serviceImpl;
 import com.tianmao.service.common.BaseService;
 import com.tianmao.service.mybatis.BaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
 /**
@@ -17,14 +16,8 @@ public class BaseServiceImpl<ID, T> implements BaseService<ID, T> {
     private BaseMapper<T> baseMapper;
 
     @Override
-    public T insert(T t) {
-        baseMapper.insert(t);
-        return t;
-    }
-
-    @Override
-    public T updateByPrimaryKey(T t) {
-        baseMapper.updateByPrimaryKey(t);
+    public T insertSelective(T t) {
+        baseMapper.insertSelective(t);
         return t;
     }
 

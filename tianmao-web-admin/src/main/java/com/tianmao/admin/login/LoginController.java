@@ -1,6 +1,8 @@
 package com.tianmao.admin.login;
 
 import com.tianmao.admin.I18nMessageUtil;
+import com.tianmao.app.util.DeviceTypeUtil;
+import com.tianmao.app.util.Rest;
 import com.tianmao.utils.HttpCode;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.DisabledAccountException;
@@ -16,8 +18,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.tianmao.util.DeviceTypeUtil;
-import com.tianmao.util.Rest;
 
 /**
  * 用户登陆

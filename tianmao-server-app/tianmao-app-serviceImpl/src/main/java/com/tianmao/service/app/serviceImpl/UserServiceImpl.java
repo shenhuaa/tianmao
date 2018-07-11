@@ -1,19 +1,19 @@
 package com.tianmao.service.app.serviceImpl;
 
+import com.tianmao.service.app.UserService;
+import com.tianmao.service.app.mapper.UserMapper;
+import com.tianmao.service.common.serviceImpl.BaseServiceImpl;
+import com.tianmao.service.exception.BaseServiceException;
+import com.tianmao.service.model.user.User;
 import com.tianmao.utils.HttpCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import com.tianmao.service.app.mapper.UserMapper;
-import com.tianmao.service.model.user.User;
-import com.tianmao.service.app.UserService;
-import com.tianmao.service.exception.BaseServiceException;
 
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<Long,User>  implements UserService {
 
 
     @Autowired
