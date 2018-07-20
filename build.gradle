@@ -67,12 +67,15 @@ subprojects {
 		userAgentUtilsVersion = "1.21"
 		thumbnailatorVersion = "0.4.8"
 		swagger2Version = "2.8.0"
+		wlxshPayVersion = "0.3.1"
+		wlxshCommon = "0.1.4"
 	}
 
 	repositories {
 		mavenLocal()
 		/*  mavenCentral()*/
 		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+		maven { url 'http://39.108.155.22:8081/repository/wlxsh/'}
 	}
 
 	// 打包后需要排除的文件

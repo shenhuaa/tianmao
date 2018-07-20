@@ -1,21 +1,35 @@
 package com.tianmao.controller.app.weixin.codepay;
 
-import com.tianmao.app.util.CookieUtil;
-import com.tianmao.app.util.HeadUtil;
+import cn.wlxsh.common.util.lang.BigDecimalUtil;
+import cn.wlxsh.common.util.random.SerialNumberUtil;
+import cn.wlxsh.common.util.servlet.HttpCode;
+import cn.wlxsh.common.util.servlet.I18nMessageUtil;
+import cn.wlxsh.common.util.servlet.RemoteClientIpUtil;
+import cn.wlxsh.common.util.servlet.Rest;
+import cn.wlxsh.pay.weixin.common.WeixinPayConstants;
+import cn.wlxsh.pay.weixin.model.request.UnifiedOrderRequest;
+import cn.wlxsh.pay.weixin.model.response.UnifiedOrderResponse;
+import cn.wlxsh.pay.weixin.sdk.WeixinPay;
 import com.tianmao.app.util.ZxingUtil;
+import com.tianmao.controller.app.weixin.config.MallWxpayConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.math.BigDecimal;
 
-@RestController
+@Controller
 @RequestMapping("/pay")
 public class WxAliCodePayController {
+
+
+    @Autowired
+    private MallWxpayConfig wxpayConfig;
 
 
     /**
@@ -25,31 +39,42 @@ public class WxAliCodePayController {
      */
     @GetMapping(value = "/image", produces = {MediaType.IMAGE_PNG_VALUE, MediaType.IMAGE_JPEG_VALUE})
     public void qrcode(HttpServletResponse response) {
-        String redirectUrl = "http://w19r935245.iok.la/pay/qrcode/callback" + "/" + "BBB888";
+        String sumOrderNumber = SerialNumberUtil.generate();
+        //String redirectUrl = "http://w19r935245.iok.la/pay/show/action?money=0.05&orderNumber="+sumOrderNumber;
+        String redirectUrl = "weixin：//wxpay/bizpayurl?appid=wx2421b1c4370ec43b&mch_id=10000100&nonce_str=f6808210402125e30663234f94c87a8c&product_id=1&time_stamp=1415949957&sign=512F68131DD251DA4A45DA79CC7EFE9D";
         ZxingUtil.getQRCodeImage(redirectUrl, response);
     }
 
     /**
-     * 扫码后回调地址
-     * @param shopNumber 门店编号
      */
-    @RequestMapping("/qrcode/callback/{shopNumber}")
-    public void callback(@PathVariable String shopNumber, HttpServletRequest request, HttpServletResponse response) {
-
+    @RequestMapping("/wx/attr")
+    @ResponseBody
+    public Rest wxAttr(BigDecimal money, String orderNumber) {
+        Rest.Builder rest = Rest.newBuilder();
+        BigDecimal totalFee = BigDecimalUtil.mul(money, new BigDecimal(100));
         try {
-            String url = "http://w19r935245.iok.la:80";
-            if (HeadUtil.isWeixin(request)) {
-                String openId = CookieUtil.getCookie(request, "openId");
-                url += "/html/wxpay.html?shopNumber=" + shopNumber;
-                url += "&openId=" + openId;
-            } else {
-                String buyerId = CookieUtil.getCookie(request, "buyerId");
-                url += "/html/alipay.html?shopNumber=" + shopNumber;
-                url += "&openId=" + buyerId;
-            }
-            response.sendRedirect("/wx/token");
-        } catch (IOException e) {
-            e.printStackTrace();
+            WeixinPay wxpay = new WeixinPay(wxpayConfig, WeixinPayConstants.SignType.HMACSHA256);
+            UnifiedOrderRequest request = new UnifiedOrderRequest();
+            request.setBody(wxpayConfig.getBody());
+
+            request.setOutTradeNo(orderNumber);
+            request.setTotalFee(String.valueOf(totalFee.intValue()));
+            request.setSpbillCreateIp(RemoteClientIpUtil.getRemoteIP());
+            UnifiedOrderResponse response = wxpay.unifiedOrder(request);
+            return rest
+                    .put("wxData", response.getRestult())
+                    .put("orderNumber", orderNumber)
+                    .code(HttpCode.OK).message(I18nMessageUtil.getMessage("success")).build();
+        } catch (Exception e) {
+            return rest.code(HttpCode.ERROR).build();
         }
+    }
+
+    //回显地址
+    @RequestMapping("/show/action")
+    public String showPayAction(BigDecimal money, String orderNumber, ModelMap model) {
+        model.put("money",money);
+        model.put("orderNumber",orderNumber);
+        return "/weixin/showAction";
     }
 }

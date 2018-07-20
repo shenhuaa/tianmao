@@ -24,4 +24,8 @@ dependencies {
     compile group: 'org.json', name: 'json', version: '20171018'
     compile("io.springfox:springfox-swagger-ui:${swagger2Version}")
     compile("io.springfox:springfox-swagger2:${swagger2Version}")
+    compile("cn.wlxsh.common:wlxsh-common:${wlxshCommon}")
+    compile("cn.wlxsh.pay:wlxsh-pay-wft:${wlxshPayVersion}")
+    compile("cn.wlxsh.pay:wlxsh-pay-weixin:${wlxshPayVersion}")
+    compile("cn.wlxsh.pay:wlxsh-pay-ali:${wlxshPayVersion}")
 }

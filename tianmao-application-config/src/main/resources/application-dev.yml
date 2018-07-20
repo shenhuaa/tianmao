@@ -8,7 +8,6 @@ web:
   #网站网址ip或域名
   domain: http://127.0.0.1
   proxy-domain: http://w19r935245.iok.la
-
   app:
     port: 8081
     name: tianmao-web-app
