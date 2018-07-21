@@ -1,5 +1,7 @@
 package com.tianmao.service.app.serviceImpl;
 
+import com.tianmao.service.JmsConstant;
+import com.tianmao.service.RabbitmqService;
 import com.tianmao.service.app.UserService;
 import com.tianmao.service.app.mapper.UserMapper;
 import com.tianmao.service.common.serviceImpl.BaseServiceImpl;
@@ -15,12 +17,17 @@ import java.util.List;
 @Service
 public class UserServiceImpl extends BaseServiceImpl<Long,User>  implements UserService {
 
+    @Autowired
+    private RabbitmqService rabbitmqService;
 
     @Autowired
     private UserMapper userMapper;
 
     @Override
     public List<User> selectList() {
+        Long userId = 2L;
+        rabbitmqService.send(JmsConstant.APP_TOPIC_EXCHANGE, JmsConstant.SYSTEM_PUSH_ROUTING_KEY, userId);
+        System.out.println("已经MQ推送消息出去--------------------------");
         return userMapper.selectAllData();
     }
 

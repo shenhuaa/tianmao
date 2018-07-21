@@ -10,4 +10,5 @@ include 'tianmao-mybatis'
 include 'tianmao-redis'
 include 'tianmao-web-admin'
 include 'tianmao-web-common'
+include 'tianmao-server-jms'
 

@@ -20,6 +20,10 @@ public interface QuartzTaskService {
 
     boolean create(QuartzTask quartzTask);
 
+    List<QuartzTask> getList(QuartzTaskDtoFilter filter);
+
+    int total(TaskStatus taskStatus);
+
     QuartzTask getById(@RequestParam("id") Long id);
 
     List<QuartzTask> getListByModule(@RequestParam("module") String module, QuartzTaskDtoFilter filter);

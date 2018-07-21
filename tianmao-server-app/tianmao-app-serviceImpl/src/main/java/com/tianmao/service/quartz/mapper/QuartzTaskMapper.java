@@ -1,5 +1,6 @@
 package com.tianmao.service.quartz.mapper;
 
+import com.tianmao.service.dto.mall.QuartzTaskDtoFilter;
 import com.tianmao.service.model.quartzs.QuartzTask;
 import com.tianmao.service.mybatis.BaseMapper;
 import com.tianmao.service.type.quartz.TaskGroup;
@@ -30,4 +31,7 @@ public interface QuartzTaskMapper extends BaseMapper<QuartzTask> {
 
     QuartzTask getQuartzTask(Long dataId);
 
+    int total(TaskStatus status);
+
+    List<QuartzTask> getList(@Param("status") TaskStatus status);
 }

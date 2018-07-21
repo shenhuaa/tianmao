@@ -5,18 +5,22 @@ spring:
     port: 6379
     password:
     database: 0
-
   #mq配置
-    rabbitmq:
-      host: 10.10.20.168
-      port: 5672
-      username: admin
-      password: 123456
-      publisher-confirms: true
-      virtual-host: /
-      listener:
-          simple:
-            auto-startup: false
+  rabbitmq:
+    host: 10.10.20.149
+    port: 5672
+    username: admin
+    password: 123456
+    #开启发送确认
+    publisher-confirms: true
+    #开启发送失败退回
+    publisher-returns: true
+    virtual-host: /
+    listener:
+        simple:
+          auto-startup: true
+          #手动确定ACK
+          acknowledge-mode: manual
 
 #mysql配置
 druid:

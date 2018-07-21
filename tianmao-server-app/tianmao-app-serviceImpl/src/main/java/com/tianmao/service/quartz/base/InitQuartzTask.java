@@ -9,6 +9,8 @@ import com.tianmao.service.type.quartz.TaskStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
@@ -22,7 +24,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2018/3/15
  */
 @Component
-public class InitQuartzTask {
+public class InitQuartzTask implements ApplicationRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(InitQuartzTask.class);
 
@@ -36,35 +38,25 @@ public class InitQuartzTask {
     @Autowired
     private ThreadPoolTaskExecutor threadPoolTaskExecutor;
 
-    @PostConstruct
-    public void init() {
-        threadPoolTaskExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    //睡60秒，等服务启动完成再执行任务
-                    TimeUnit.SECONDS.sleep(60);
-                } catch (InterruptedException e) {
-                    logger.error(e.getMessage(), e);
-                }
-                try {
-                    String module = ModuleConstant.WEB_APP;
-                    final int total = quartzTaskService.totalByModule(ModuleConstant.WEB_APP, TaskStatus.RUNNING);
-                    final int page = (int) Math.ceil(total / 500F);
+    @Override
+    public void run(ApplicationArguments args) {
+        threadPoolTaskExecutor.execute(() -> {
+            try {
+                final int total = quartzTaskService.total(TaskStatus.RUNNING);
+                final int page = (int) Math.ceil(total / 500F);
 
-                    logger.debug("任务加载总条数：[{}]", total);
-                    for (int i = 0; i < page; i++) {
-                        QuartzTaskDtoFilter filter = new QuartzTaskDtoFilter();
-                        filter.setStatus(TaskStatus.RUNNING);
-                        filter.setPagingAttribute(new PagingAttribute(i, 500));
-                        List<QuartzTask> tasks = quartzTaskService.getListByModule(module, filter);
-                        if (tasks.size() > 0) {
-                            jobService.addJobs(tasks);
-                        }
+                logger.info("任务加载总条数：[{}]", total);
+                for (int i = 0; i < page; i++) {
+                    QuartzTaskDtoFilter filter = new QuartzTaskDtoFilter();
+                    filter.setStatus(TaskStatus.RUNNING);
+                    filter.setPagingAttribute(new PagingAttribute(i, 500));
+                    List<QuartzTask> tasks = quartzTaskService.getList(filter);
+                    if (!tasks.isEmpty()) {
+                        jobService.addJobs(tasks);
                     }
-                } catch (Exception e) {
-                    logger.error("任务调度加载失败：", e);
                 }
+            } catch (Exception e) {
+                logger.error("任务调度加载失败：", e);
             }
         });
     }

@@ -25,8 +25,6 @@ public class UserController {
     @Autowired
     private UserClient userClient;
 
-    @Autowired
-    private QuartzTaskClient quartzTaskClient;
 
     @ApiOperation(value = "用户集合", httpMethod = "POST")
     @ApiImplicitParams({

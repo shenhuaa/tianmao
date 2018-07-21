@@ -1,5 +1,6 @@
 dependencies {
     compile project(':tianmao-redis')
+    compile project(':tianmao-server-jms')
     compile project(':tianmao-application-config')
     compile project(':tianmao-server-app:tianmao-app-service')
     compile project(':tianmao-server-app:tianmao-app-api')

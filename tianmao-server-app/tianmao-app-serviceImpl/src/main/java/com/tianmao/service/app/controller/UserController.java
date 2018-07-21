@@ -19,7 +19,8 @@ public class UserController  implements UserClient  {
 
     @Override
     public List<User> selectList() {
-        return userService.selectAll(new User());
+       // return userService.selectAll(new User());
+        return userService.selectList();
     }
 
     @Override

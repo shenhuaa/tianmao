@@ -52,4 +52,15 @@
         WHERE data_id = #{dataId}
     </select>
 
+    <select id="total" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM quartz_task
+        WHERE status = #{status}
+    </select>
+
+    <select id="getList" resultMap="default">
+        SELECT * FROM quartz_task
+        WHERE status = #{status}
+        ORDER BY start_time DESC
+    </select>
+
 </mapper>

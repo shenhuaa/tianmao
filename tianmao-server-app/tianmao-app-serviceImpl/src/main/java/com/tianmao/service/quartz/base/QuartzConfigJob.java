@@ -26,11 +26,11 @@ public class QuartzConfigJob {
 
     private static final Logger logger = LoggerFactory.getLogger(QuartzConfigJob.class);
 
-    @Autowired
+   /* @Autowired
     private DataSource dataSource;
 
     @Autowired
-    private QuartzProperties quartzProperties;
+    private QuartzProperties quartzProperties;*/
 
     @Autowired
     private QuartzJobFactory quartzJobFactory;
@@ -45,15 +45,15 @@ public class QuartzConfigJob {
         SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
         //用于quartz集群,QuartzScheduler 启动时更新己存在的Job，这样就不用每次修改targetObject后删除qrtz_job_details表对应记录了
         schedulerFactoryBean.setOverwriteExistingJobs(true);
-        schedulerFactoryBean.setQuartzProperties(quartzProperties());
+        //schedulerFactoryBean.setQuartzProperties(quartzProperties());
         schedulerFactoryBean.setJobFactory(quartzJobFactory);
-        schedulerFactoryBean.setDataSource(dataSource);
+        //schedulerFactoryBean.setDataSource(dataSource);
         //QuartzScheduler 延时启动，应用启动完10秒后 QuartzScheduler 再启动
-        schedulerFactoryBean.setStartupDelay(quartzProperties.getStartupDelay());
+        //schedulerFactoryBean.setStartupDelay(quartzProperties.getStartupDelay());
         return schedulerFactoryBean;
     }
 
-    @Bean
+   /* @Bean
     public Properties quartzProperties() {
         PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
         Properties properties = new Properties();
@@ -73,6 +73,6 @@ public class QuartzConfigJob {
         } catch (IOException e) {
             throw new RuntimeException("初始化quartz配置文件失败", e);
         }
-    }
+    }*/
 
 }

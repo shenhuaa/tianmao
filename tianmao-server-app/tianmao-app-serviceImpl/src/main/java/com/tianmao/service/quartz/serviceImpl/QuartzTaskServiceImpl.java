@@ -47,6 +47,18 @@ public class QuartzTaskServiceImpl implements QuartzTaskService {
     }
 
     @Override
+    public List<QuartzTask> getList(QuartzTaskDtoFilter filter) {
+        PagingAttribute page = filter.getPagingAttribute();
+        PageHelper.startPage(page.getPageNumber(), page.getPageSize());
+        return quartzTaskMapper.getList(filter.getStatus());
+    }
+
+    @Override
+    public int total(TaskStatus status) {
+        return quartzTaskMapper.total(status);
+    }
+
+    @Override
     public QuartzTask getById(Long id) {
         Assert.notNull(id, "任务编号不能为空");
         return quartzTaskMapper.getById(id);
