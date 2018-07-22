@@ -39,11 +39,6 @@ public class EmailGood {
     @Autowired
     private FreeMarkerConfigurer freemarker;
 
-
-
-    public void test() {
-
-    }
     /**
      * 模板邮件
      * @param sendTo

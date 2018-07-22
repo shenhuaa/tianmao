@@ -14,7 +14,8 @@ import org.springframework.stereotype.Component;
  * @author roach
  * @date 2018/3/15
  */
-public class EmailInit implements ApplicationRunner {
+//implements ApplicationRunner
+public class EmailInit   {
     private static final Logger logger = LoggerFactory.getLogger(EmailInit.class);
 
     @Autowired
@@ -24,7 +25,6 @@ public class EmailInit implements ApplicationRunner {
     private ThreadPoolTaskExecutor threadPoolTaskExecutor;
 
 
-    @Override
     public void run(ApplicationArguments args) {
         threadPoolTaskExecutor.execute(() -> {
             try {

@@ -53,7 +53,7 @@ public class RabbitmqServiceImpl implements RabbitmqService, RabbitTemplate.Conf
         String messageId = UUID.randomUUID().toString().replace("-", "");
         CorrelationData correlationData = new CorrelationData(messageId);
         try {
-            //logger.info("jms[{}]发送消息中：[{}]", correlationData, t);
+            logger.info("jms[{}]发送消息中：[{}]", correlationData, t);
             rabbitTemplate.convertAndSend(exchange, routingKey, t, correlationData);
         } catch (Exception e) {
             logger.error("jms消息发送失败：", e);
