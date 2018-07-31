@@ -21,7 +21,11 @@ public enum TaskGroup implements BaseEnum {
 
     CHAT_RED_EXPIRE(5, "过期红包"),
 
-    CHAT_TIMING_REMINDER(6, "定时提醒");
+    CHAT_TIMING_REMINDER(6, "定时提醒"),
+
+    MALL_AUTO_CLOSE_DISCOUNT(7, "自动关闭优惠券"),
+
+    MATCH_ORDER(8, "自动关闭票务订单");
 
     private int index;
 

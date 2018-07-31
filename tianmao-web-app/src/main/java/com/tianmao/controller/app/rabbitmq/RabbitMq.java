@@ -17,6 +17,9 @@ public class RabbitMq {
     )
     @RabbitHandler
     private void sendJPushUtil(Long userId) {
-        System.out.println("-----------------------------------------------监听接收到rabbitmq的数据id是"+userId);
+        System.out.println("-----------------------------------------------监听接收到数据id是"+userId);
+        System.out.println("-----------------------------------------------监听接收到数据id是"+userId);
+        System.out.println("-----------------------------------------------监听接收到数据id是"+userId);
+        System.out.println("-----------------------------------------------监听接收到数据id是"+userId);
     }
 }
