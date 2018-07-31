@@ -27,7 +27,6 @@ public class UserServiceImpl extends BaseServiceImpl<Long,User>  implements User
     public List<User> selectList() {
         Long userId = 2L;
         rabbitmqService.send(JmsConstant.APP_TOPIC_EXCHANGE, JmsConstant.SYSTEM_PUSH_ROUTING_KEY, userId);
-        System.out.println("已经MQ推送消息出去--------------------------");
         return userMapper.selectAllData();
     }
 

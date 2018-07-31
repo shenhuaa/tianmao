@@ -40,6 +40,7 @@ public class AppWebMvcConfigurer extends WebMvcSupportConfigurer {
     public static String[] excludePathRelease() {
         return new String[]{
                 "/user/**",
+                "/weixin/**",
                 "/error",
                 "/wx/**",
                 "/tiao/**",
