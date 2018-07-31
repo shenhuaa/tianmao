@@ -2,3 +2,5 @@ dependencies {
     compile project(':tianmao-application-config')
     compile("org.springframework.boot:spring-boot-starter-amqp")
 }
+
+
