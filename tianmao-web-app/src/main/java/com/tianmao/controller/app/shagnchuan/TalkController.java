@@ -1,11 +1,11 @@
-package com.tianmao.controller.app.talk;
+package com.tianmao.controller.app.shagnchuan;
 
 import com.tianmao.app.api.common.MessageComponent;
 import com.tianmao.app.config.AppContext;
 import com.tianmao.app.util.FileUploadUtil;
 import com.tianmao.app.util.Rest;
-import com.tianmao.utils.HttpCode;
 import com.tianmao.service.type.user.MessageTemplateType;
+import com.tianmao.utils.HttpCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;

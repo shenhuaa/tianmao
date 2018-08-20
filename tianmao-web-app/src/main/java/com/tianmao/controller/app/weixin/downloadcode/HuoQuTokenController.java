@@ -1,7 +1,7 @@
 package com.tianmao.controller.app.weixin.downloadcode;
 
 import com.alibaba.fastjson.JSONObject;
-import com.tianmao.app.util.FileDownloadUtil;
+import com.tianmao.app.util.FileDownloadUtils;
 import com.tianmao.app.util.Qrcode;
 import com.tianmao.app.util.ZxingUtil;
 import com.tianmao.controller.app.weixin.getuser.WXAuthUtil;
@@ -59,7 +59,7 @@ public class HuoQuTokenController {
             }
             ZxingUtil.writeQRCodeImage(qrcode.getUrl(), qrcodeImagePath);
         }
-        FileDownloadUtil.download("公众号二维码" + ".png", qrcodeImagePath, response);
+        FileDownloadUtils.download("公众号二维码" + ".png", qrcodeImagePath, response);
         return "OK";
     }
 }
